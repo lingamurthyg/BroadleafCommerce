@@ -21,8 +21,10 @@ import org.apache.commons.lang3.StringUtils;
 import org.broadleafcommerce.common.util.FormatUtil;
 import org.springframework.stereotype.Component;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Date;
 
 /**
@@ -36,14 +38,15 @@ public class NullAwareDateFilterValueConverter implements FilterValueConverter<D
         return parseDate(stringValue, FormatUtil.getDateFormat());
     }
 
-    public Date parseDate(String value, SimpleDateFormat dateFormat) {
+    public Date parseDate(String value, DateTimeFormatter dateFormat) {
         if (StringUtils.isEmpty(value)) {
             return null;
         }
         try {
-            return dateFormat.parse(value);
-        } catch (ParseException e) {
-            throw new RuntimeException("Error while converting '" + value + "' into Date using pattern " + dateFormat.toPattern(), e);
+            LocalDateTime localDateTime = LocalDateTime.parse(value, dateFormat);
+            return Date.from(localDateTime.atZone(ZoneId.systemDefault()).toInstant());
+        } catch (DateTimeParseException e) {
+            throw new RuntimeException("Error while converting '" + value + "' into Date using pattern " + dateFormat.toString(), e);
         }
     }
 }

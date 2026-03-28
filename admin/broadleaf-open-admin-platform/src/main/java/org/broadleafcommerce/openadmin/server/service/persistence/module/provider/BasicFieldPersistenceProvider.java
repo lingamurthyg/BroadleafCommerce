@@ -59,7 +59,7 @@ import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.DecimalFormat;
-import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collection;
@@ -711,11 +711,11 @@ public class BasicFieldPersistenceProvider extends FieldPersistenceProviderAdapt
         return MetadataProviderResponse.HANDLED;
     }
 
-    protected SimpleDateFormat getDateFormatToPopulateValue(PopulateValueRequest populateValueRequest, Serializable instance) {
+    protected DateTimeFormatter getDateFormatToPopulateValue(PopulateValueRequest populateValueRequest, Serializable instance) {
         return populateValueRequest.getDataFormatProvider().getSimpleDateFormatter();
     }
 
-    protected SimpleDateFormat getDateFormatToExtractValue(ExtractValueRequest extractValueRequest) {
+    protected DateTimeFormatter getDateFormatToExtractValue(ExtractValueRequest extractValueRequest) {
         return extractValueRequest.getDataFormatProvider().getSimpleDateFormatter();
     }
 

@@ -21,7 +21,10 @@ import org.broadleafcommerce.common.util.FormatUtil;
 import org.broadleafcommerce.common.web.BroadleafRequestContext;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Date;
 
 /**
@@ -41,9 +44,9 @@ public class RuleBuilderFormatUtil {
      * @return the string value to show in the admin
      */
     public static String formatDate(Date date) {
-        SimpleDateFormat formatter = new SimpleDateFormat(DATE_FORMAT);
-        formatter.setTimeZone(BroadleafRequestContext.getBroadleafRequestContext().getTimeZone());
-        return formatter.format(date);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(DATE_FORMAT)
+                .withZone(BroadleafRequestContext.getBroadleafRequestContext().getTimeZone().toZoneId());
+        return formatter.format(date.toInstant());
     }
 
     /**
@@ -55,19 +58,23 @@ public class RuleBuilderFormatUtil {
     public static Date parseDate(String date) throws ParseException {
         Date parsedDate;
         try {
-            parsedDate = FormatUtil.getTimeZoneFormat().parse(date);
-        } catch (ParseException e) {
+            DateTimeFormatter formatter = FormatUtil.getTimeZoneFormat();
+            LocalDateTime localDateTime = LocalDateTime.parse(date, formatter);
+            parsedDate = Date.from(localDateTime.atZone(BroadleafRequestContext.getBroadleafRequestContext().getTimeZone().toZoneId()).toInstant());
+        } catch (DateTimeParseException e) {
             try {
-                SimpleDateFormat formatter = new SimpleDateFormat(COMPATIBILITY_FORMAT);
-                formatter.setTimeZone(BroadleafRequestContext.getBroadleafRequestContext().getTimeZone());
-                parsedDate = formatter.parse(date);
-            } catch (ParseException e1) {
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern(COMPATIBILITY_FORMAT)
+                        .withZone(BroadleafRequestContext.getBroadleafRequestContext().getTimeZone().toZoneId());
+                LocalDateTime localDateTime = LocalDateTime.parse(date, formatter);
+                parsedDate = Date.from(localDateTime.atZone(BroadleafRequestContext.getBroadleafRequestContext().getTimeZone().toZoneId()).toInstant());
+            } catch (DateTimeParseException e1) {
                 try {
-                    SimpleDateFormat formatter = new SimpleDateFormat(DATE_FORMAT);
-                    formatter.setTimeZone(BroadleafRequestContext.getBroadleafRequestContext().getTimeZone());
-                    parsedDate = formatter.parse(date);
-                } catch (ParseException e2) {
-                    throw e;
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern(DATE_FORMAT)
+                            .withZone(BroadleafRequestContext.getBroadleafRequestContext().getTimeZone().toZoneId());
+                    LocalDateTime localDateTime = LocalDateTime.parse(date, formatter);
+                    parsedDate = Date.from(localDateTime.atZone(BroadleafRequestContext.getBroadleafRequestContext().getTimeZone().toZoneId()).toInstant());
+                } catch (DateTimeParseException e2) {
+                    throw new ParseException("Unable to parse date: " + date, 0);
                 }
             }
         }

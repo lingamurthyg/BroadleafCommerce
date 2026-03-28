@@ -19,19 +19,19 @@ package org.broadleafcommerce.test.common.context.override.config.client;
 
 import org.broadleafcommerce.common.email.service.info.EmailInfo;
 import org.broadleafcommerce.common.extensibility.FrameworkXmlBeanDefinitionReader;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.ImportResource;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 /**
  * @author Nick Crum ncrum
  */
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 public class ClientOverrideTest {
 
     @Configuration
@@ -48,6 +48,6 @@ public class ClientOverrideTest {
 
     @Test
     public void testOverride() {
-        Assert.assertEquals("client", emailInfo.getFromAddress());
+        Assertions.assertEquals("client", emailInfo.getFromAddress());
     }
 }

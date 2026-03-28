@@ -27,7 +27,7 @@ import org.springframework.web.util.UrlPathHelper;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import javax.xml.ws.RequestWrapper;
+import jakarta.xml.ws.RequestWrapper;
 
 
 public class AdminMappingExceptionResolver extends SimpleMappingExceptionResolver {

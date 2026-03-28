@@ -21,16 +21,16 @@
 package org.broadleafcommerce.test.common.properties;
 
 import org.broadleafcommerce.common.config.BroadleafEnvironmentConfiguringApplicationListener;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 
 /**
@@ -38,7 +38,7 @@ import org.springframework.test.context.junit4.SpringRunner;
  * 
  * @author Phillip Verheyden (phillipuniverse)
  */
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @ContextConfiguration(initializers = BroadleafEnvironmentConfiguringApplicationListener.class)
 public class ConditionalOnPropertyTest {
 
@@ -63,11 +63,11 @@ public class ConditionalOnPropertyTest {
     
     @Test
     public void foundPropertyInstantiatesBean() {
-        Assert.assertTrue(ctx.containsBean("shouldFind"));
+        Assertions.assertTrue(ctx.containsBean("shouldFind"));
     }
     
     @Test
     public void missingPropertyPreventsBean() {
-        Assert.assertFalse(ctx.containsBean("shouldNotFind"));
+        Assertions.assertFalse(ctx.containsBean("shouldNotFind"));
     }
 }

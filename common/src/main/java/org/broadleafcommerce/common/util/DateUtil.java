@@ -19,18 +19,20 @@ package org.broadleafcommerce.common.util;
 
 import org.broadleafcommerce.common.time.SystemTime;
 
+import java.time.Duration;
+import java.time.Instant;
 import java.util.Date;
 
 public class DateUtil {
 
-    public static final long ONE_HOUR_MILLIS = 60 * 60 * 1000;
-    public static final long ONE_DAY_MILLIS = ONE_HOUR_MILLIS * 24;
-    public static final long ONE_WEEK_MILLIS = ONE_DAY_MILLIS * 7;
+    public static final long ONE_HOUR_MILLIS = Duration.ofHours(1).toMillis();
+    public static final long ONE_DAY_MILLIS = Duration.ofDays(1).toMillis();
+    public static final long ONE_WEEK_MILLIS = Duration.ofDays(7).toMillis();
 
-    public static final long ONE_HOUR_SECONDS = 60 * 60;
-    public static final long ONE_DAY_SECONDS = ONE_HOUR_SECONDS * 24;
-    public static final long ONE_WEEK_SECONDS = ONE_DAY_SECONDS * 7;
-    public static final long SIX_MONTHS_SECONDS = ONE_DAY_SECONDS * 6 * 30;
+    public static final long ONE_HOUR_SECONDS = Duration.ofHours(1).getSeconds();
+    public static final long ONE_DAY_SECONDS = Duration.ofDays(1).getSeconds();
+    public static final long ONE_WEEK_SECONDS = Duration.ofDays(7).getSeconds();
+    public static final long SIX_MONTHS_SECONDS = Duration.ofDays(180).getSeconds();
 
     /**
      * Determine if a date range is active.

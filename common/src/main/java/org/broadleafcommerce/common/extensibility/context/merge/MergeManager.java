@@ -45,14 +45,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
+import jakarta.xml.parsers.DocumentBuilder;
+import jakarta.xml.parsers.DocumentBuilderFactory;
+import jakarta.xml.parsers.ParserConfigurationException;
+import jakarta.xml.transform.OutputKeys;
+import jakarta.xml.transform.Transformer;
+import jakarta.xml.transform.TransformerFactory;
+import jakarta.xml.transform.dom.DOMSource;
+import jakarta.xml.transform.stream.StreamResult;
 
 /**
  * This class manages all xml merge interactions with callers. It is responsible for

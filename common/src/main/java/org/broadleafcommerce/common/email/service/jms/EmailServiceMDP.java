@@ -25,10 +25,10 @@ import org.springframework.mail.MailPreparationException;
 import org.springframework.mail.MailSendException;
 
 import jakarta.annotation.Resource;
-import javax.jms.JMSException;
-import javax.jms.Message;
-import javax.jms.MessageListener;
-import javax.jms.ObjectMessage;
+import jakarta.jms.JMSException;
+import jakarta.jms.Message;
+import jakarta.jms.MessageListener;
+import jakarta.jms.ObjectMessage;
 import java.util.HashMap;
 
 /**

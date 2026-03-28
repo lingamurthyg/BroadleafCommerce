@@ -35,7 +35,7 @@ import org.broadleafcommerce.common.sitemap.service.SiteMapServiceImpl;
 import org.broadleafcommerce.common.web.BaseUrlResolver;
 import org.easymock.EasyMock;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 
 import java.io.BufferedReader;
@@ -77,7 +77,7 @@ public class SiteMapGeneratorTest {
 
     }
 
-    @After
+    @AfterEach
     public void deleteTempFiles() {
         fileService.removeResource("/sitemap_index.xml");
         fileService.removeResource("/sitemap1.xml");
@@ -127,7 +127,7 @@ public class SiteMapGeneratorTest {
             siteMapService.setSiteMapGenerators(smgList);
             SiteMapGenerationResponse smgr = siteMapService.generateSiteMap();
 
-            Assert.assertFalse(smgr.isHasError());
+            Assertions.assertFalse(smgr.isHasError());
         }
 
     }
@@ -135,7 +135,7 @@ public class SiteMapGeneratorTest {
     protected void compareFiles(File file1, String pathToFile2) throws IOException {
         String actualOutput = convertFileToString(file1);
         String expectedOutput = convertFileToString(new File(pathToFile2));
-        Assert.assertTrue(actualOutput.equals(expectedOutput));
+        Assertions.assertTrue(actualOutput.equals(expectedOutput));
     }
 
     protected String convertFileToString(File file) throws IOException {

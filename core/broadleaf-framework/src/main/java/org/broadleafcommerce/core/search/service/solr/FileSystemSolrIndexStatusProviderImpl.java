@@ -37,24 +37,24 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Map;
 
 import jakarta.annotation.Resource;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
-import javax.xml.xpath.XPath;
-import javax.xml.xpath.XPathConstants;
-import javax.xml.xpath.XPathExpressionException;
-import javax.xml.xpath.XPathFactory;
+import jakarta.xml.parsers.DocumentBuilder;
+import jakarta.xml.parsers.DocumentBuilderFactory;
+import jakarta.xml.parsers.ParserConfigurationException;
+import jakarta.xml.transform.OutputKeys;
+import jakarta.xml.transform.Transformer;
+import jakarta.xml.transform.TransformerException;
+import jakarta.xml.transform.TransformerFactory;
+import jakarta.xml.transform.dom.DOMSource;
+import jakarta.xml.transform.stream.StreamResult;
+import jakarta.xml.xpath.XPath;
+import jakarta.xml.xpath.XPathConstants;
+import jakarta.xml.xpath.XPathExpressionException;
+import jakarta.xml.xpath.XPathFactory;
 
 /**
  * XML based Index Status provider.  Tracks current index status (last successful event id), events that have error (along with retry count), events that
@@ -77,7 +77,7 @@ public class FileSystemSolrIndexStatusProviderImpl implements SolrIndexStatusPro
 
     protected XPath xPath;
 
-    protected SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
+    protected DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ssXXX");
 
     @Value("${solr.index.status.dead.event.ttl.seconds:165600}") //165600 - 2 days
     protected Integer deadEventTTLSeconds;

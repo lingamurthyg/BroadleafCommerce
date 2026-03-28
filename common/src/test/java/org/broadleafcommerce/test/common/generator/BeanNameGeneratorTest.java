@@ -21,21 +21,21 @@
 package org.broadleafcommerce.test.common.generator;
 
 import org.broadleafcommerce.common.config.BroadleafBeanNameGenerator;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 /**
  * Tests for the {@link BroadleafBeanNameGenerator}
  * 
  * @author Phillip Verheyden (phillipuniverse)
  */
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 public class BeanNameGeneratorTest {
     
     @Configuration
@@ -47,11 +47,11 @@ public class BeanNameGeneratorTest {
     
     @Test
     public void testAddingBlPrefix() {
-        Assert.assertEquals("blScannedBean", appctx.getBeanNamesForType(ScannedBean.class)[0]);
+        Assertions.assertEquals("blScannedBean", appctx.getBeanNamesForType(ScannedBean.class)[0]);
     }
     
     @Test
     public void testExistingBlPrefix() {
-        Assert.assertEquals("blAlreadyPrefixScannedBean", appctx.getBeanNamesForType(AlreadyPrefixedScannedBean.class)[0]);
+        Assertions.assertEquals("blAlreadyPrefixScannedBean", appctx.getBeanNamesForType(AlreadyPrefixedScannedBean.class)[0]);
     }
 }

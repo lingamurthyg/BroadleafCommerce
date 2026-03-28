@@ -17,11 +17,11 @@
  */
 package org.broadleafcommerce.common.jmx;
 
-import javax.management.Descriptor;
-import javax.management.JMException;
-import javax.management.modelmbean.ModelMBeanAttributeInfo;
-import javax.management.modelmbean.ModelMBeanNotificationInfo;
-import javax.management.modelmbean.ModelMBeanOperationInfo;
+import jakarta.management.Descriptor;
+import jakarta.management.JMException;
+import jakarta.management.modelmbean.ModelMBeanAttributeInfo;
+import jakarta.management.modelmbean.ModelMBeanNotificationInfo;
+import jakarta.management.modelmbean.ModelMBeanOperationInfo;
 
 /**
  * The MetadataMBeanInfoAssembler provided by Spring does not allow the usage of JDK dynamic proxies. However, several

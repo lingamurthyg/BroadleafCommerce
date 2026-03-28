@@ -32,18 +32,18 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.SortedSet;
 import java.util.TreeSet;
-import javax.management.Attribute;
-import javax.management.AttributeList;
-import javax.management.AttributeNotFoundException;
-import javax.management.DynamicMBean;
-import javax.management.InvalidAttributeValueException;
-import javax.management.MBeanAttributeInfo;
-import javax.management.MBeanException;
-import javax.management.MBeanInfo;
-import javax.management.MBeanOperationInfo;
-import javax.management.MalformedObjectNameException;
-import javax.management.ObjectName;
-import javax.management.ReflectionException;
+import jakarta.management.Attribute;
+import jakarta.management.AttributeList;
+import jakarta.management.AttributeNotFoundException;
+import jakarta.management.DynamicMBean;
+import jakarta.management.InvalidAttributeValueException;
+import jakarta.management.MBeanAttributeInfo;
+import jakarta.management.MBeanException;
+import jakarta.management.MBeanInfo;
+import jakarta.management.MBeanOperationInfo;
+import jakarta.management.MalformedObjectNameException;
+import jakarta.management.ObjectName;
+import jakarta.management.ReflectionException;
 
 /**
  * @author Jeff Fischer

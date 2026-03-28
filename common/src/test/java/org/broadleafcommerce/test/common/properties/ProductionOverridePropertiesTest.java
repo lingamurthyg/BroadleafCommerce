@@ -21,16 +21,16 @@
 package org.broadleafcommerce.test.common.properties;
 
 import org.broadleafcommerce.common.config.BroadleafEnvironmentConfiguringApplicationListener;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.core.env.Environment;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 /**
  * Tests that a non-default active profile (production) overrides everything from common and anything shared.
@@ -39,7 +39,7 @@ import org.springframework.test.context.junit4.SpringRunner;
  * 
  * @author Phillip Verheyden (phillipuniverse)
  */
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @ContextConfiguration(initializers = BroadleafEnvironmentConfiguringApplicationListener.class)
 @ActiveProfiles("production")
 @DirtiesContext
@@ -50,12 +50,12 @@ public class ProductionOverridePropertiesTest {
     
     @Test
     public void testOverriddenProductionProperty() {
-        Assert.assertEquals("productionvalue", env.getProperty(DefaultDevelopmentOverridePropertiesTest.TEST_PROPERTY));
+        Assertions.assertEquals("productionvalue", env.getProperty(DefaultDevelopmentOverridePropertiesTest.TEST_PROPERTY));
     }
     
     @Test
     public void testOverriddenProductionSharedProperty() {
-        Assert.assertEquals("productionsharedvalue", env.getProperty("shared.override.test"));
-        Assert.assertTrue(((ConfigurableEnvironment) env).getPropertySources().contains(BroadleafEnvironmentConfiguringApplicationListener.PROFILE_AWARE_SOURCES_NAME));
+        Assertions.assertEquals("productionsharedvalue", env.getProperty("shared.override.test"));
+        Assertions.assertTrue(((ConfigurableEnvironment) env).getPropertySources().contains(BroadleafEnvironmentConfiguringApplicationListener.PROFILE_AWARE_SOURCES_NAME));
     }
 }

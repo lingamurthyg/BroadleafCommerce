@@ -293,13 +293,13 @@ public class OfferCustomPersistenceHandler extends ClassCustomPersistenceHandler
                     Property endDate = entity.findProperty("endDate");
                     Date end = null;
                     if (endDate != null && StringUtils.isNotBlank(endDate.getValue())) {
-                        end = helper.getSimpleDateFormatter().parse(endDate.getValue());
+                        end = Date.from(java.time.LocalDateTime.parse(endDate.getValue(), helper.getSimpleDateFormatter()).atZone(java.time.ZoneId.systemDefault()).toInstant());
                     }
-                    Date date = helper.getSimpleDateFormatter().parse(startDate.getValue());
+                    Date date = Date.from(java.time.LocalDateTime.parse(startDate.getValue(), helper.getSimpleDateFormatter()).atZone(java.time.ZoneId.systemDefault()).toInstant());
                     isActive = DateUtil.isActive(date, end, true);
                 }
                 entity.addProperty(buildIsActiveProperty(isActive));
-            } catch (ParseException e) {
+            } catch (Exception e) {
                 throw ExceptionHelper.refineException(e);
             }
         }

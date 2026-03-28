@@ -17,9 +17,9 @@
  */
 package org.broadleafcommerce.test.common.context.override.importer;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -29,7 +29,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
@@ -38,7 +38,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  *
  * @author Nick Crum ncrum
  */
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = DuplicateImportConfigurationTest.DuplicateImportConfiguration.class)
 public class DuplicateImportConfigurationTest {
 
@@ -71,7 +71,7 @@ public class DuplicateImportConfigurationTest {
 
     @Test
     public void testDuplicateImport() {
-        Assert.assertEquals(ObjectMapper.class, objectMapper.getClass());
-        Assert.assertEquals(BCryptPasswordEncoder.class, passwordEncoder.getClass());
+        Assertions.assertEquals(ObjectMapper.class, objectMapper.getClass());
+        Assertions.assertEquals(BCryptPasswordEncoder.class, passwordEncoder.getClass());
     }
 }

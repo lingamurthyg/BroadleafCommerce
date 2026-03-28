@@ -101,7 +101,7 @@ import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
-import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -203,7 +203,7 @@ public class BasicPersistenceModule implements PersistenceModule, RecordHelper, 
     }
 
     @Override
-    public SimpleDateFormat getSimpleDateFormatter() {
+    public DateTimeFormatter getSimpleDateFormatter() {
         return FormatUtil.getDateFormat();
     }
 
@@ -681,11 +681,11 @@ public class BasicPersistenceModule implements PersistenceModule, RecordHelper, 
                                 strVal = null;
                             } else {
                                 if (Date.class.isAssignableFrom(value.getClass())) {
-                                    strVal = getSimpleDateFormatter().format((Date) value);
+                                    strVal = getSimpleDateFormatter().format(((Date) value).toInstant());
                                 } else if (Timestamp.class.isAssignableFrom(value.getClass())) {
-                                    strVal = getSimpleDateFormatter().format(new Date(((Timestamp) value).getTime()));
+                                    strVal = getSimpleDateFormatter().format(((Timestamp) value).toInstant());
                                 } else if (Calendar.class.isAssignableFrom(value.getClass())) {
-                                    strVal = getSimpleDateFormatter().format(((Calendar) value).getTime());
+                                    strVal = getSimpleDateFormatter().format(((Calendar) value).toInstant());
                                 } else if (Double.class.isAssignableFrom(value.getClass())) {
                                     strVal = getDecimalFormatter().format(value);
                                 } else if (BigDecimal.class.isAssignableFrom(value.getClass())) {
@@ -725,11 +725,11 @@ public class BasicPersistenceModule implements PersistenceModule, RecordHelper, 
             strVal = null;
         } else {
             if (Date.class.isAssignableFrom(value.getClass())) {
-                strVal = getSimpleDateFormatter().format((Date) value);
+                strVal = getSimpleDateFormatter().format(((Date) value).toInstant());
             } else if (Timestamp.class.isAssignableFrom(value.getClass())) {
-                strVal = getSimpleDateFormatter().format(new Date(((Timestamp) value).getTime()));
+                strVal = getSimpleDateFormatter().format(((Timestamp) value).toInstant());
             } else if (Calendar.class.isAssignableFrom(value.getClass())) {
-                strVal = getSimpleDateFormatter().format(((Calendar) value).getTime());
+                strVal = getSimpleDateFormatter().format(((Calendar) value).toInstant());
             } else if (Double.class.isAssignableFrom(value.getClass())) {
                 strVal = getDecimalFormatter().format(value);
             } else if (BigDecimal.class.isAssignableFrom(value.getClass())) {

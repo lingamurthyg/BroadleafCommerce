@@ -17,8 +17,8 @@
  */
 package org.broadleafcommerce.common.jmx;
 
-import javax.management.MalformedObjectNameException;
-import javax.management.ObjectName;
+import jakarta.management.MalformedObjectNameException;
+import jakarta.management.ObjectName;
 
 /**
  * The MetadataNamingStrategy provided by Spring does not allow the usage of JDK dynamic proxies. However, several

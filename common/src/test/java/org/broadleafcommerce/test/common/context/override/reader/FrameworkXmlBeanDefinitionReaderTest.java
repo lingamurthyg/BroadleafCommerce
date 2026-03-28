@@ -21,14 +21,14 @@
 package org.broadleafcommerce.test.common.context.override.reader;
 
 import org.broadleafcommerce.common.extensibility.FrameworkXmlBeanDefinitionReader;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
@@ -38,7 +38,7 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
  * 
  * @author Phillip Verheyden (phillipuniverse)
  */
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = FrameworkXmlBeanDefinitionTestConfiguration.class)
 public class FrameworkXmlBeanDefinitionReaderTest {
 
@@ -50,8 +50,8 @@ public class FrameworkXmlBeanDefinitionReaderTest {
 
     @Test
     public void testOverrideInjection() {
-        Assert.assertEquals(BCryptPasswordEncoder.class.getName(), passwordEncoder.getClass().getName());
+        Assertions.assertEquals(BCryptPasswordEncoder.class.getName(), passwordEncoder.getClass().getName());
 
-        Assert.assertEquals(XmlMapper.class.getName(), objectMapper.getClass().getName());
+        Assertions.assertEquals(XmlMapper.class.getName(), objectMapper.getClass().getName());
     }
 }

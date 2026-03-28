@@ -31,7 +31,8 @@ import org.broadleafcommerce.core.pricing.service.exception.PricingException;
 import org.broadleafcommerce.profile.core.domain.Customer;
 import org.springframework.stereotype.Service;
 
-import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -172,10 +173,10 @@ public class MergeCartServiceImpl implements MergeCartService {
     }
     
     protected void setSavedCartAttributes(Order cart) {
-        SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, ''yy");
+        DateTimeFormatter sdf = DateTimeFormatter.ofPattern("MMM dd, ''yy").withZone(ZoneId.systemDefault());
         Date cartLastUpdated = cart.getAuditable().getDateUpdated();
-        
-        cart.setName("Previously saved cart - " + sdf.format(cartLastUpdated));
+
+        cart.setName("Previously saved cart - " + sdf.format(cartLastUpdated.toInstant()));
         cart.setStatus(OrderStatus.NAMED);
     }
 

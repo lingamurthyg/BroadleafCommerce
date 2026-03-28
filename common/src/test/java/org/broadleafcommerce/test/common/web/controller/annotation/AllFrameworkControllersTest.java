@@ -21,20 +21,20 @@
 package org.broadleafcommerce.test.common.web.controller.annotation;
 
 import org.broadleafcommerce.common.web.controller.annotation.EnableAllFrameworkControllers;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 /**
  * Tests fomr {@link EnableAllFrameworkControllers}
  * 
  * @author Phillip Verheyden (phillipuniverse)
  */
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 public class AllFrameworkControllersTest {
 
     @Configuration
@@ -46,8 +46,8 @@ public class AllFrameworkControllersTest {
     
     @Test
     public void frameworkControllerPrefixed() {
-        Assert.assertEquals("blTestFrameworkController", appctx.getBeanNamesForType(TestFrameworkController.class)[0]);
-        Assert.assertEquals("blTestFrameworkRestController", appctx.getBeanNamesForType(TestFrameworkRestController.class)[0]);
+        Assertions.assertEquals("blTestFrameworkController", appctx.getBeanNamesForType(TestFrameworkController.class)[0]);
+        Assertions.assertEquals("blTestFrameworkRestController", appctx.getBeanNamesForType(TestFrameworkRestController.class)[0]);
     }
     
 }

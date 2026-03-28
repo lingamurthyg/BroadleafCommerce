@@ -22,15 +22,15 @@ package org.broadleafcommerce.test.common.context.enable;
 
 import org.broadleafcommerce.common.config.BroadleafEnvironmentConfiguringApplicationListener;
 import org.broadleafcommerce.common.config.EnableBroadleafAdminAutoConfiguration;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 /**
@@ -38,7 +38,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
  * 
  * @author Phillip Verheyden (phillipuniverse)
  */
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @ContextConfiguration(initializers = BroadleafEnvironmentConfiguringApplicationListener.class)
 @WebAppConfiguration
 @ActiveProfiles("mbeansdisabled")
@@ -53,23 +53,23 @@ public class EnableBroadleafAdminAutoConfigurationTest {
     
     @Test
     public void adminBeanOverridesRoot() {
-        Assert.assertEquals("admin", ctx.getBean("override"));
+        Assertions.assertEquals("admin", ctx.getBean("override"));
     }
     
     @Test
     public void cannotFindSiteBean() {
-        Assert.assertFalse(ctx.containsBean("site"));
+        Assertions.assertFalse(ctx.containsBean("site"));
     }
     
     @Test
     public void canFindAdminBean() {
-        Assert.assertTrue(ctx.containsBean("admin"));
-        Assert.assertEquals("admin", ctx.getBean("admin"));
+        Assertions.assertTrue(ctx.containsBean("admin"));
+        Assertions.assertEquals("admin", ctx.getBean("admin"));
     }
     
     @Test
     public void canFindRootBean() {
-        Assert.assertTrue(ctx.containsBean("root"));
-        Assert.assertEquals("root", ctx.getBean("root"));
+        Assertions.assertTrue(ctx.containsBean("root"));
+        Assertions.assertEquals("root", ctx.getBean("root"));
     }
 }

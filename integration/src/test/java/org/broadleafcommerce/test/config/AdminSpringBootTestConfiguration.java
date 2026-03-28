@@ -47,7 +47,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
-import javax.sql.DataSource;
+import jakarta.sql.DataSource;
 
 /**
  * Marketplace spring boot integration test config

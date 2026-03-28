@@ -24,9 +24,9 @@ import org.broadleafcommerce.test.common.context.autoconfig.nested.ContainsNeste
 import org.broadleafcommerce.test.common.context.autoconfig.nested.ContainsNestedConfiguration.NestedAfterAutoConfiguration;
 import org.broadleafcommerce.test.common.context.autoconfig.scan.AfterAutoConfiguration;
 import org.broadleafcommerce.test.common.context.autoconfig.scan.ComponentScanningConfiguration;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -36,7 +36,7 @@ import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurat
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 /**
  * 
@@ -44,7 +44,7 @@ import org.springframework.test.context.junit4.SpringRunner;
  * @author Phillip Verheyden (phillipuniverse)
  */
 @SpringBootTest
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 public class PostAutoConfigurationTest {
     
     @Configuration
@@ -68,17 +68,17 @@ public class PostAutoConfigurationTest {
     
     @Test
     public void testPostAutoConfigurationOverridesAutoConfig() {
-        Assert.assertEquals(AfterAutoConfiguration.class.getName(), overridingBean);
+        Assertions.assertEquals(AfterAutoConfiguration.class.getName(), overridingBean);
     }
     
     @Test
     public void testPostAutoConfigurationRunsSecond() {
-        Assert.assertEquals(BaseAutoConfiguration.class.getName(), nonOverridingBean);
+        Assertions.assertEquals(BaseAutoConfiguration.class.getName(), nonOverridingBean);
     }
     
     @Test
     public void testNestedPostAutoConfigurationRunsFirst() {
-        Assert.assertEquals(NestedAfterAutoConfiguration.class.getName(), nestedRunsFirst);
+        Assertions.assertEquals(NestedAfterAutoConfiguration.class.getName(), nestedRunsFirst);
     }
 
 }

@@ -21,14 +21,14 @@
 package org.broadleafcommerce.test.common.context.merge.reader;
 
 import org.broadleafcommerce.common.extensibility.MergeXmlBeanDefinitionReader;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.List;
 
@@ -39,7 +39,7 @@ import lombok.Data;
  * 
  * @author Phillip Verheyden (phillipuniverse)
  */
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 public class MergeBeanDefinitionTest {
 
     @Configuration
@@ -73,16 +73,16 @@ public class MergeBeanDefinitionTest {
     
     @Test
     public void validateDefinitionMerging() {
-        Assert.assertEquals("file3", ex.field1);
-        Assert.assertEquals("file2", ex.field2);
+        Assertions.assertEquals("file3", ex.field1);
+        Assertions.assertEquals("file2", ex.field2);
         // Not expecting that the @Bean method will do anything, it should skip any attempt at merging that bean definition
         // with the XML versions
-        Assert.assertEquals(null, ex.field3);
+        Assertions.assertEquals(null, ex.field3);
     }
     
     @Test
     public void noDuplicatedAnonymousBeans() {
-        Assert.assertEquals(1, anonymousBeans.size());
+        Assertions.assertEquals(1, anonymousBeans.size());
     }
     
 }

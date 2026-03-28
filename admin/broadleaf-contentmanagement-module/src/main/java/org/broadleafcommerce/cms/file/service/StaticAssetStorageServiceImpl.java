@@ -57,7 +57,8 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Blob;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -346,10 +347,10 @@ public class StaticAssetStorageServiceImpl implements StaticAssetStorageService 
         sb.append("---");
 
         StringBuilder sb2 = new StringBuilder(200);
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd-HH-mm-ss").withZone(ZoneId.systemDefault());
         if (staticAsset instanceof Auditable) {
             Auditable auditableStaticAsset = (Auditable) staticAsset;
-            sb2.append(format.format(auditableStaticAsset.getDateUpdated() == null ? auditableStaticAsset.getDateCreated() : auditableStaticAsset.getDateUpdated()));
+            sb2.append(format.format((auditableStaticAsset.getDateUpdated() == null ? auditableStaticAsset.getDateCreated() : auditableStaticAsset.getDateUpdated()).toInstant()));
         }
 
         if (parameterMap != null) {

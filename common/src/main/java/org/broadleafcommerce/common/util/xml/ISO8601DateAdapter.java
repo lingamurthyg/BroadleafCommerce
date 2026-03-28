@@ -17,25 +17,33 @@
  */
 package org.broadleafcommerce.common.util.xml;
 
-import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 
 public class ISO8601DateAdapter extends XmlAdapter<String, Date> {
 
-    protected SimpleDateFormat isoFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
+    protected DateTimeFormatter isoFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSZ")
+            .withZone(ZoneId.systemDefault());
 
     @Override
     public String marshal(Date arg0) throws Exception {
-        SimpleDateFormat fmt = (SimpleDateFormat) isoFormat.clone();
-        return fmt.format(arg0);
+        if (arg0 == null) {
+            return null;
+        }
+        return isoFormat.format(arg0.toInstant());
     }
 
     @Override
     public Date unmarshal(String arg0) throws Exception {
-        SimpleDateFormat fmt = (SimpleDateFormat) isoFormat.clone();
-        return fmt.parse(arg0);
+        if (arg0 == null) {
+            return null;
+        }
+        Instant instant = Instant.from(isoFormat.parse(arg0));
+        return Date.from(instant);
     }
 
 }

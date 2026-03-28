@@ -21,15 +21,15 @@
 package org.broadleafcommerce.test.common.condition;
 
 import org.broadleafcommerce.common.condition.ConditionalOnBroadleafModule;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 
 /**
@@ -37,7 +37,7 @@ import org.springframework.test.context.junit4.SpringRunner;
  * 
  * @author Phillip Verheyden (phillipuniverse)
  */
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 public class ConditionalOnModuleTest {
 
     @Configuration
@@ -71,17 +71,19 @@ public class ConditionalOnModuleTest {
     
     @Test
     public void testConfigurationClass() {
-        Assert.assertNotNull(appctx.getBean("configurationBeanLoaded"));
+        Assertions.assertNotNull(appctx.getBean("configurationBeanLoaded"));
     }
-    
+
     @Test
     public void testBeanMethod() {
-        Assert.assertNotNull(appctx.getBean("beanMethodLoaded"));
+        Assertions.assertNotNull(appctx.getBean("beanMethodLoaded"));
     }
-    
-    @Test(expected = NoSuchBeanDefinitionException.class)
+
+    @Test
     public void testNotLoaded() {
-        appctx.getBean("notLoaded");
+        Assertions.assertThrows(NoSuchBeanDefinitionException.class, () -> {
+            appctx.getBean("notLoaded");
+        });
     }
     
 }

@@ -21,16 +21,16 @@
 package org.broadleafcommerce.test.common.properties;
 
 import org.broadleafcommerce.common.config.BroadleafEnvironmentConfiguringApplicationListener;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestPropertySource;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 /**
  * Tests to ensure that @TestPropertySource actually overrides anything from the default Broadleaf properties with a negative test
@@ -38,7 +38,7 @@ import org.springframework.test.context.junit4.SpringRunner;
  * 
  * @author Phillip Verheyden (phillipuniverse)
  */
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @ContextConfiguration(initializers = BroadleafEnvironmentConfiguringApplicationListener.class)
 @TestPropertySource(properties = "dev.only.property=overridevalue")
 public class PropertySourceOverrideDefaultTest {
@@ -52,12 +52,12 @@ public class PropertySourceOverrideDefaultTest {
     
     @Test
     public void propertySourceAnnotationDoNotOverrideBroadleafDefaults() {
-        Assert.assertNotEquals("overridevalue", env.getProperty("test.property.source"));
+        Assertions.assertNotEquals("overridevalue", env.getProperty("test.property.source"));
     }
     
     @Test
     public void testPropertySourceAnnotationOverridesBroadleafDeafults() {
         // This is something only set in development.properties (the highest profile-specific) but @TestPropertySource should override it
-        Assert.assertEquals("overridevalue", env.getProperty("dev.only.property"));
+        Assertions.assertEquals("overridevalue", env.getProperty("dev.only.property"));
     }
 }

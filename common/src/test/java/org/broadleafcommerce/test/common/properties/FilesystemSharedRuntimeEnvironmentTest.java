@@ -21,25 +21,25 @@
 package org.broadleafcommerce.test.common.properties;
 
 import org.broadleafcommerce.common.config.BroadleafEnvironmentConfiguringApplicationListener;
-import org.junit.AfterClass;
-import org.junit.Assert;
-import org.junit.BeforeClass;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.core.env.Environment;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 /**
  * 
  * 
  * @author Phillip Verheyden (phillipuniverse)
  */
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @ContextConfiguration(initializers = BroadleafEnvironmentConfiguringApplicationListener.class)
 @ActiveProfiles("production")
 @DirtiesContext
@@ -48,8 +48,8 @@ public class FilesystemSharedRuntimeEnvironmentTest {
     @Autowired
     protected Environment env;
     
-    // Inside of a static @BeforeEachClass to ensure this code executes before Spring starts the appctx
-    @BeforeEachClass
+    // Inside of a static @BeforeAll to ensure this code executes before Spring starts the appctx
+    @BeforeAll
     public static void setOverrideProperty() {
         String sharedOverridePropertiesPath = FilesystemSharedRuntimeEnvironmentTest.class.getClassLoader().getResource("sharedoverridestest.properties").getFile();
         sharedOverridePropertiesPath = sharedOverridePropertiesPath.replace("%20", " ");
@@ -58,7 +58,7 @@ public class FilesystemSharedRuntimeEnvironmentTest {
     }
     
     // don't impact other tests with my property override
-    @AfterEachlass
+    @AfterAll
     public static void clearOverrideProperty() {
         System.clearProperty(BroadleafEnvironmentConfiguringApplicationListener.PROPERTY_SHARED_OVERRIDES_PROPERTY);
     }
@@ -68,7 +68,7 @@ public class FilesystemSharedRuntimeEnvironmentTest {
     // by dirtying the context
     @DirtiesContext
     public void testPropertiesWereOverridden() {
-        Assert.assertEquals("sharedoverridevalue", env.getProperty(DefaultDevelopmentOverridePropertiesTest.TEST_PROPERTY));
-        Assert.assertTrue(((ConfigurableEnvironment) env).getPropertySources().contains(BroadleafEnvironmentConfiguringApplicationListener.SHARED_OVERRIDE_SOURCES_NAME));
+        Assertions.assertEquals("sharedoverridevalue", env.getProperty(DefaultDevelopmentOverridePropertiesTest.TEST_PROPERTY));
+        Assertions.assertTrue(((ConfigurableEnvironment) env).getPropertySources().contains(BroadleafEnvironmentConfiguringApplicationListener.SHARED_OVERRIDE_SOURCES_NAME));
     }
 }

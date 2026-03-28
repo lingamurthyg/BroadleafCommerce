@@ -34,7 +34,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import jakarta.persistence.EntityManagerFactory;
-import javax.sql.DataSource;
+import jakarta.sql.DataSource;
 
 /**
  * The utility methods in this class provide a way to ignore the currently configured site/catalog contexts and instead

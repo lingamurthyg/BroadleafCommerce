@@ -45,7 +45,8 @@ import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import jakarta.annotation.Resource;
 
 /**
@@ -231,12 +232,10 @@ public class OrderPaymentConfirmationStrategyImpl implements OrderPaymentConfirm
      * @return
      */
     protected String constructExpirationDate(Integer expMonth, Integer expYear) {
-        SimpleDateFormat sdf = new SimpleDateFormat(getGatewayExpirationDateFormat());
-        DateTime exp = new DateTime()
-                .withYear(expYear)
-                .withMonthOfYear(expMonth);
+        DateTimeFormatter sdf = DateTimeFormatter.ofPattern(getGatewayExpirationDateFormat());
+        LocalDate exp = LocalDate.of(expYear, expMonth, 1);
 
-        return sdf.format(exp.toDate());
+        return sdf.format(exp);
     }
 
     protected String getGatewayExpirationDateFormat(){

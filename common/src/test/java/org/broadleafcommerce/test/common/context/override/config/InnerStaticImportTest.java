@@ -17,19 +17,19 @@
  */
 package org.broadleafcommerce.test.common.context.override.config;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 /**
  * @author Nick Crum ncrum
  */
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = InnerStaticImportConfiguration.class)
 public class InnerStaticImportTest {
 
@@ -38,6 +38,6 @@ public class InnerStaticImportTest {
 
     @Test
     public void testOverride() {
-        Assert.assertEquals(BCryptPasswordEncoder.class, passwordEncoder.getClass());
+        Assertions.assertEquals(BCryptPasswordEncoder.class, passwordEncoder.getClass());
     }
 }

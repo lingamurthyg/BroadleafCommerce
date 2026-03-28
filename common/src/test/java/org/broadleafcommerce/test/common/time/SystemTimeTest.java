@@ -28,26 +28,29 @@ import org.broadleafcommerce.common.time.TimeSource;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-import junit.framework.TestCase;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterEach;
 
-public class SystemTimeTest extends TestCase {
+import static org.junit.jupiter.api.Assertions.*;
+
+public class SystemTimeTest {
     private TimeSource mockTimeSource;
 
-    @Override
-    protected void setUp() throws Exception {
-        super.setUp();
+    @BeforeEach
+    public void setUp() throws Exception {
         mockTimeSource = createMock(TimeSource.class);
     }
 
-    @Override
-    protected void tearDown() throws Exception {
+    @AfterEach
+    public void tearDown() throws Exception {
         SystemTime.reset();
-        super.tearDown();
     }
 
     /**
      * Test method for {@link SystemTime#setGlobalTimeSource(TimeSource)}.
      */
+    @Test
     public void testSetGlobalTimeSource() {
         expect(mockTimeSource.timeInMillis()).andReturn(100L).atLeastOnce();
         replay(mockTimeSource);
@@ -59,6 +62,7 @@ public class SystemTimeTest extends TestCase {
     /**
      * Test method for {@link SystemTime#resetGlobalTimeSource()}.
      */
+    @Test
     public void testResetGlobalTimeSource() {
         expect(mockTimeSource.timeInMillis()).andReturn(200L).anyTimes();
         replay(mockTimeSource);
@@ -71,6 +75,7 @@ public class SystemTimeTest extends TestCase {
     /**
      * Test method for {@link SystemTime#setLocalTimeSource(TimeSource)}.
      */
+    @Test
     public void testSetLocalTimeSource() {
         expect(mockTimeSource.timeInMillis()).andReturn(300L).atLeastOnce();
         replay(mockTimeSource);
@@ -82,6 +87,7 @@ public class SystemTimeTest extends TestCase {
     /**
      * Test method for {@link SystemTime#resetLocalTimeSource()}.
      */
+    @Test
     public void testResetLocalTimeSource() {
         expect(mockTimeSource.timeInMillis()).andReturn(400L).anyTimes();
         replay(mockTimeSource);
@@ -94,6 +100,7 @@ public class SystemTimeTest extends TestCase {
     /**
      * Test method for {@link SystemTime#resetLocalTimeSource()}.
      */
+    @Test
     public void testLocalOverridesGlobal() {
         TimeSource mockLocalTimeSource = createMock(TimeSource.class);
         expect(mockTimeSource.timeInMillis()).andReturn(500L).anyTimes();
@@ -110,6 +117,7 @@ public class SystemTimeTest extends TestCase {
     /**
      * Test method for {@link SystemTime#reset()}.
      */
+    @Test
     public void testReset() {
         TimeSource mockLocalTimeSource = createMock(TimeSource.class);
         expect(mockTimeSource.timeInMillis()).andReturn(700L).anyTimes();
@@ -125,6 +133,7 @@ public class SystemTimeTest extends TestCase {
     /**
      * Test method for {@link SystemTime#asMillis()}.
      */
+    @Test
     public void testAsMillis() {
         expect(mockTimeSource.timeInMillis()).andReturn(1000L).atLeastOnce();
         replay(mockTimeSource);
@@ -136,6 +145,7 @@ public class SystemTimeTest extends TestCase {
     /**
      * Test method for {@link SystemTime#asDate()}.
      */
+    @Test
     public void testAsDate() {
         expect(mockTimeSource.timeInMillis()).andReturn(1100L).atLeastOnce();
         replay(mockTimeSource);
@@ -147,6 +157,7 @@ public class SystemTimeTest extends TestCase {
     /**
      * Test method for {@link SystemTime#asCalendar()}.
      */
+    @Test
     public void testAsCalendar() {
         expect(mockTimeSource.timeInMillis()).andReturn(1200L).atLeastOnce();
         replay(mockTimeSource);
@@ -158,6 +169,7 @@ public class SystemTimeTest extends TestCase {
     /**
      * Test method for {@link SystemTime#asMillis(boolean)}.
      */
+    @Test
     public void testAsMillisBoolean() {
         Calendar cal = new GregorianCalendar(2010, 1, 2, 3, 4, 5);
         long timeInMillis = cal.getTimeInMillis() + 3; // Add a few milliseconds for good measure
@@ -175,6 +187,7 @@ public class SystemTimeTest extends TestCase {
     /**
      * Test method for {@link SystemTime#asCalendar(boolean)}.
      */
+    @Test
     public void testAsCalendarBoolean() {
         Calendar cal = new GregorianCalendar(2010, 1, 2, 3, 4, 5);
         cal.set(Calendar.MILLISECOND, 3); // Add a few milliseconds for good measure
@@ -191,6 +204,7 @@ public class SystemTimeTest extends TestCase {
     /**
      * Test method for {@link SystemTime#asDate(boolean)}.
      */
+    @Test
     public void testAsDateBoolean() {
         Calendar cal = new GregorianCalendar(2010, 1, 2, 3, 4, 5);
         cal.set(Calendar.MILLISECOND, 3); // Add a few milliseconds for good measure

@@ -106,7 +106,9 @@ import java.math.BigDecimal;
 import java.text.DateFormat;
 import java.text.DateFormatSymbols;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -792,10 +794,8 @@ public class FormBuilderServiceImpl implements FormBuilderService {
         }
 
         // format date list grid cells
-        SimpleDateFormat formatter = new SimpleDateFormat("MMM d, Y @ hh:mma");
-        DateFormatSymbols symbols = new DateFormatSymbols(Locale.getDefault());
-        symbols.setAmPmStrings(new String[] { "am", "pm" });
-        formatter.setDateFormatSymbols(symbols);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMM d, yyyy @ hh:mma")
+                .withZone(ZoneId.systemDefault());
 
         // For each of the entities (rows) in the list grid, we need to build the associated
         // ListGridRecord and set the required fields on the record. These fields are the same ones
@@ -848,8 +848,11 @@ public class FormBuilderServiceImpl implements FormBuilderService {
                     } else {
                         if (headerField.getFieldType().equals("DATE")) {
                             try {
-                                Date date = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss").parse(p.getValue());
-                                String newValue = formatter.format(date);
+                                DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm:ss");
+                                LocalDateTime localDateTime = LocalDateTime.parse(p.getValue(), inputFormatter);
+                                String newValue = formatter.format(localDateTime.atZone(ZoneId.systemDefault()))
+                                        .replace("AM", "am")
+                                        .replace("PM", "pm");
                                 recordField.setValue(newValue);
                             } catch (Exception ex) {
                                 recordField.setValue(p.getValue());

@@ -33,8 +33,7 @@ import org.codehaus.jettison.json.JSONObject;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.Map;
 
 import jakarta.annotation.Resource;
@@ -54,7 +53,7 @@ import jakarta.servlet.http.HttpServletRequest;
 public class ProductLinkedDataGeneratorImpl extends AbstractLinkedDataGenerator {
     protected static final String IN_STOCK = "InStock";
     protected static final String OUT_OF_STOCK = "OutOfStock";
-    protected final static DateFormat ISO_8601_FORMAT = new SimpleDateFormat("YYYY-MM-DD");
+    protected final static DateTimeFormatter ISO_8601_FORMAT = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
     @Resource(name = "blRatingService")
     protected RatingService ratingService;

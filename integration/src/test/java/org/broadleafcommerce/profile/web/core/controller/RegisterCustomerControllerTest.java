@@ -48,7 +48,7 @@ public class RegisterCustomerControllerTest extends TestNGSiteIntegrationSetup {
 
     private GreenMail greenMail;
 
-    @BeforeEachClass
+    @BeforeAll
     protected void setupControllerTest() {
         greenMail = new GreenMail(
                 new ServerSetup[] {
@@ -58,7 +58,7 @@ public class RegisterCustomerControllerTest extends TestNGSiteIntegrationSetup {
         greenMail.start();
     }
 
-    @AfterEachlass
+    @AfterAll
     protected void tearDownControllerTest() {
         greenMail.stop();
     }

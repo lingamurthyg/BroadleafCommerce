@@ -21,22 +21,22 @@
 package org.broadleafcommerce.test.common.properties;
 
 import org.broadleafcommerce.common.config.BroadleafEnvironmentConfiguringApplicationListener;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 /**
  * Tests that our property configurations work with other environments that aren't standard
  * 
  * @author Phillip Verheyden (phillipuniverse)
  */
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @ContextConfiguration(initializers = BroadleafEnvironmentConfiguringApplicationListener.class)
 @ActiveProfiles("otherenvironment")
 @DirtiesContext
@@ -47,6 +47,6 @@ public class OtherEnvironmentOverridePropertiesTest {
     
     @Test
     public void testOtherEnvironmentOverride() {
-        Assert.assertEquals("otherenvironmentvalue", env.getProperty(DefaultDevelopmentOverridePropertiesTest.TEST_PROPERTY));
+        Assertions.assertEquals("otherenvironmentvalue", env.getProperty(DefaultDevelopmentOverridePropertiesTest.TEST_PROPERTY));
     }
 }

@@ -18,13 +18,13 @@
 package org.broadleafcommerce.test.common.test.merge;
 
 import org.broadleafcommerce.common.extensibility.FrameworkXmlBeanDefinitionReader;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.ImportResource;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import java.util.Iterator;
 import java.util.Set;
 import jakarta.annotation.Resource;
@@ -32,7 +32,7 @@ import jakarta.annotation.Resource;
 /**
  * @author Nick Crum ncrum
  */
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 public class MergeAnnotationOverrideTest {
 
     @Configuration
@@ -53,14 +53,14 @@ public class MergeAnnotationOverrideTest {
     @Test
     public void testMergedOrder() {
         Iterator<String> iterator = mergedList.iterator();
-        Assert.assertEquals("common-xml", iterator.next());
-        Assert.assertEquals("framework-xml", iterator.next());
-        Assert.assertEquals("module-xml", iterator.next());
-        Assert.assertEquals("framework-config1", iterator.next());
-        Assert.assertEquals("framework-config2", iterator.next());
-        Assert.assertEquals("local-xml", iterator.next());
-        Assert.assertEquals("local-config1", iterator.next());
-        Assert.assertEquals("local-config2", iterator.next());
+        Assertions.assertEquals("common-xml", iterator.next());
+        Assertions.assertEquals("framework-xml", iterator.next());
+        Assertions.assertEquals("module-xml", iterator.next());
+        Assertions.assertEquals("framework-config1", iterator.next());
+        Assertions.assertEquals("framework-config2", iterator.next());
+        Assertions.assertEquals("local-xml", iterator.next());
+        Assertions.assertEquals("local-config1", iterator.next());
+        Assertions.assertEquals("local-config2", iterator.next());
     }
 
 

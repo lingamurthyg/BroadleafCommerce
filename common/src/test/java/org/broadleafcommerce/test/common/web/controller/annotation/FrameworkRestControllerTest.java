@@ -21,21 +21,21 @@
 package org.broadleafcommerce.test.common.web.controller.annotation;
 
 import org.broadleafcommerce.common.web.controller.annotation.EnableFrameworkRestControllers;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 /**
  * Tests for {@link EnableFrameworkRestControllers}
  * 
  * @author Phillip Verheyden (phillipuniverse)
  */
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 public class FrameworkRestControllerTest {
 
     @Configuration
@@ -47,11 +47,13 @@ public class FrameworkRestControllerTest {
     
     @Test
     public void frameworkControllerPrefixed() {
-        Assert.assertEquals("blTestFrameworkRestController", appctx.getBeanNamesForType(TestFrameworkRestController.class)[0]);
+        Assertions.assertEquals("blTestFrameworkRestController", appctx.getBeanNamesForType(TestFrameworkRestController.class)[0]);
     }
-    
-    @Test(expected = NoSuchBeanDefinitionException.class)
+
+    @Test
     public void noControllerActivated() {
-        appctx.getBean(TestFrameworkController.class);
+        Assertions.assertThrows(NoSuchBeanDefinitionException.class, () -> {
+            appctx.getBean(TestFrameworkController.class);
+        });
     }
 }

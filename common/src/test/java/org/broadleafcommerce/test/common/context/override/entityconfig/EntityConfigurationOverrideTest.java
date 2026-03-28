@@ -17,11 +17,11 @@
  */
 package org.broadleafcommerce.test.common.context.override.entityconfig;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import java.util.Iterator;
 import java.util.Set;
 import jakarta.annotation.Resource;
@@ -29,7 +29,7 @@ import jakarta.annotation.Resource;
 /**
  * @author Nick Crum ncrum
  */
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = EntityConfigurationOverrideTestConfiguration.class)
 public class EntityConfigurationOverrideTest {
 
@@ -39,8 +39,8 @@ public class EntityConfigurationOverrideTest {
     @Test
     public void testMergedEntityContextsOrder() {
         Iterator<String> iterator = mergedEntityContexts.iterator();
-        Assert.assertEquals("common", iterator.next());
-        Assert.assertEquals("framework", iterator.next());
-        Assert.assertEquals("local", iterator.next());
+        Assertions.assertEquals("common", iterator.next());
+        Assertions.assertEquals("framework", iterator.next());
+        Assertions.assertEquals("local", iterator.next());
     }
 }

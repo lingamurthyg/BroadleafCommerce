@@ -31,13 +31,13 @@ import java.util.Iterator;
 import java.util.Map;
 
 import jakarta.annotation.Resource;
-import javax.imageio.IIOImage;
-import javax.imageio.ImageIO;
-import javax.imageio.ImageReader;
-import javax.imageio.ImageWriteParam;
-import javax.imageio.ImageWriter;
-import javax.imageio.stream.ImageInputStream;
-import javax.imageio.stream.MemoryCacheImageOutputStream;
+import jakarta.imageio.IIOImage;
+import jakarta.imageio.ImageIO;
+import jakarta.imageio.ImageReader;
+import jakarta.imageio.ImageWriteParam;
+import jakarta.imageio.ImageWriter;
+import jakarta.imageio.stream.ImageInputStream;
+import jakarta.imageio.stream.MemoryCacheImageOutputStream;
 
 /**
  * Created by IntelliJ IDEA.

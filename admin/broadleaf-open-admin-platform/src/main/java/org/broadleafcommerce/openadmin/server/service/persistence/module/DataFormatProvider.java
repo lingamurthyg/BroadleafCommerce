@@ -18,16 +18,16 @@
 package org.broadleafcommerce.openadmin.server.service.persistence.module;
 
 import java.text.DecimalFormat;
-import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 
 /**
- * 
+ *
  * @author Jeff Fischer
  * @see {@link BasicPersistenceModule}
  */
 public interface DataFormatProvider {
 
-    public SimpleDateFormat getSimpleDateFormatter();
+    public DateTimeFormatter getSimpleDateFormatter();
 
     public DecimalFormat getDecimalFormatter();
     

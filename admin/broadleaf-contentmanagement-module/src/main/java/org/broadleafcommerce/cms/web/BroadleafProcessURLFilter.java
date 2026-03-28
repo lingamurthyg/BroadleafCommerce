@@ -41,7 +41,7 @@ import com.google.common.cache.CacheLoader;
 
 import java.io.IOException;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -133,11 +133,11 @@ public class BroadleafProcessURLFilter extends OncePerRequestFilter {
     // Request Parameters and Attributes for Sandbox Mode properties - mostly date values.
     private static String SANDBOX_ID_VAR = "blSandboxId";
     private static String SANDBOX_DATE_TIME_VAR = "blSandboxDateTime";
-    private static final SimpleDateFormat CONTENT_DATE_FORMATTER = new SimpleDateFormat("yyyyMMddHHmm");
-    private static final SimpleDateFormat CONTENT_DATE_DISPLAY_FORMATTER = new SimpleDateFormat("MM/dd/yyyy");
-    private static final SimpleDateFormat CONTENT_DATE_DISPLAY_HOURS_FORMATTER = new SimpleDateFormat("h");
-    private static final SimpleDateFormat CONTENT_DATE_DISPLAY_MINUTES_FORMATTER = new SimpleDateFormat("mm");
-    private static final SimpleDateFormat CONTENT_DATE_PARSE_FORMAT = new SimpleDateFormat("MM/dd/yyyy hh:mm aa");
+    private static final DateTimeFormatter CONTENT_DATE_FORMATTER = DateTimeFormatter.ofPattern("yyyyMMddHHmm");
+    private static final DateTimeFormatter CONTENT_DATE_DISPLAY_FORMATTER = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+    private static final DateTimeFormatter CONTENT_DATE_DISPLAY_HOURS_FORMATTER = DateTimeFormatter.ofPattern("h");
+    private static final DateTimeFormatter CONTENT_DATE_DISPLAY_MINUTES_FORMATTER = DateTimeFormatter.ofPattern("mm");
+    private static final DateTimeFormatter CONTENT_DATE_PARSE_FORMAT = DateTimeFormatter.ofPattern("MM/dd/yyyy hh:mm a");
     private static String SANDBOX_DATE_TIME_RIBBON_OVERRIDE_PARAM = "blSandboxDateTimeRibbonOverride";
     private static final String SANDBOX_DISPLAY_DATE_TIME_DATE_PARAM = "blSandboxDisplayDateTimeDate";
     private static final String SANDBOX_DISPLAY_DATE_TIME_HOURS_PARAM = "blSandboxDisplayDateTimeHours";

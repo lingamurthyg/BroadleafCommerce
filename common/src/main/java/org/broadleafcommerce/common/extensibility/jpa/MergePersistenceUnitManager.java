@@ -52,13 +52,13 @@ import java.util.Set;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.Resource;
-import javax.management.ObjectName;
+import jakarta.management.ObjectName;
 import jakarta.persistence.NamedNativeQueries;
 import jakarta.persistence.NamedNativeQuery;
 import jakarta.persistence.NamedQueries;
 import jakarta.persistence.NamedQuery;
 import jakarta.persistence.spi.PersistenceUnitInfo;
-import javax.sql.DataSource;
+import jakarta.sql.DataSource;
 
 /**
  * Merges jars, class names and mapping file names from several persistence.xml files. The

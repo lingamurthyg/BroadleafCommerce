@@ -22,12 +22,12 @@ package org.broadleafcommerce.test.common.test.merge;
 
 import org.broadleafcommerce.common.extensibility.context.merge.Merge;
 import org.broadleafcommerce.common.extensibility.context.merge.MergeAnnotationAwareBeanDefinitionRegistryPostProcessor;
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -40,7 +40,7 @@ import jakarta.annotation.Resource;
  * 
  * @author Phillip Verheyden (phillipuniverse)
  */
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 public class MergeAnnotationTest {
 
     @Configuration
@@ -78,7 +78,7 @@ public class MergeAnnotationTest {
     
     @Test
     public void listsMergedTest() {
-        Assert.assertTrue(list1.contains("config2"));
-        Assert.assertTrue(list1.contains("config3"));
+        Assertions.assertTrue(list1.contains("config2"));
+        Assertions.assertTrue(list1.contains("config3"));
     }
 }

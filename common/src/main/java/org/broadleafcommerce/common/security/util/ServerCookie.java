@@ -17,12 +17,12 @@
  */
 package org.broadleafcommerce.common.security.util;
 
-import java.text.DateFormat;
 import java.text.FieldPosition;
-import java.text.SimpleDateFormat;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Locale;
-import java.util.TimeZone;
 
 /**
  * This is a modified version of the ServerCookie implementation taken from
@@ -41,13 +41,11 @@ public class ServerCookie {
     // Other fields
     private static final String OLD_COOKIE_PATTERN =
         "EEE, dd-MMM-yyyy HH:mm:ss z";
-    private static final ThreadLocal<DateFormat> OLD_COOKIE_FORMAT =
-        new ThreadLocal<DateFormat>() {
-        protected DateFormat initialValue() {
-            DateFormat df =
-                new SimpleDateFormat(OLD_COOKIE_PATTERN, Locale.US);
-            df.setTimeZone(TimeZone.getTimeZone("GMT"));
-            return df;
+    private static final ThreadLocal<DateTimeFormatter> OLD_COOKIE_FORMAT =
+        new ThreadLocal<DateTimeFormatter>() {
+        protected DateTimeFormatter initialValue() {
+            return DateTimeFormatter.ofPattern(OLD_COOKIE_PATTERN, Locale.US)
+                    .withZone(ZoneId.of("GMT"));
         }
     };
     private static final String ancientDate;

@@ -21,45 +21,48 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import java.text.DateFormatSymbols;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
+import java.time.temporal.ChronoField;
 import java.util.Date;
 import java.util.Locale;
-import java.util.TimeZone;
 
 /**
  * Convenience class to facilitate date manipulation.
- * 
+ *
  * @author Chris Kittrell (ckittrell)
  */
 public class BLCDateUtils {
 
     private static final Log LOG = LogFactory.getLog(BLCDateUtils.class);
 
-    public static final String DEFAULT_DATE_FORMAT = "yyyy-MM-dd HH:mm:ss.s";
-    
+    public static final String DEFAULT_DATE_FORMAT = "yyyy-MM-dd HH:mm:ss.S";
+
     /**
      * Converts the given date to the UTC time zone so that dates can be correctly converted on the client side
-     * 
+     *
      * @param date
      * @return the message
      */
     public static String convertDateToUTC(Date date) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat(DEFAULT_DATE_FORMAT);
-        dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
-
-        return dateFormat.format(date);
+        DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern(DEFAULT_DATE_FORMAT)
+                .withZone(ZoneId.of("UTC"));
+        return dateFormat.format(date.toInstant());
     }
 
     public static String formatDateAsString(Date date) {
         // format date list grid cells
-        SimpleDateFormat formatter = new SimpleDateFormat("MMM d, Y @ hh:mma");
-        DateFormatSymbols symbols = new DateFormatSymbols(Locale.getDefault());
-        symbols.setAmPmStrings(new String[] { "am", "pm" });
-        formatter.setDateFormatSymbols(symbols);
+        DateTimeFormatter formatter = new DateTimeFormatterBuilder()
+                .appendPattern("MMM d, yyyy @ hh:mma")
+                .toFormatter(Locale.getDefault());
 
-        return formatter.format(date);
+        return formatter.format(date.toInstant().atZone(ZoneId.systemDefault()))
+                .replace("AM", "am")
+                .replace("PM", "pm");
     }
 
     public static Date parseStringToDate(String dateString) {
@@ -70,10 +73,11 @@ public class BLCDateUtils {
         Date parsedDate = null;
         try {
             if (StringUtils.isNotEmpty(dateString)) {
-                SimpleDateFormat formatter = new SimpleDateFormat(dateFormat);
-                parsedDate = formatter.parse(dateString);
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern(dateFormat);
+                LocalDateTime localDateTime = LocalDateTime.parse(dateString, formatter);
+                parsedDate = Date.from(localDateTime.atZone(ZoneId.systemDefault()).toInstant());
             }
-        } catch (ParseException e) {
+        } catch (Exception e) {
             LOG.warn("The date string could not be parsed into the given format: " + dateFormat, e);
         }
         return parsedDate;
@@ -88,6 +92,8 @@ public class BLCDateUtils {
             return null;
         }
 
-        return new SimpleDateFormat(format).format(date);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(format)
+                .withZone(ZoneId.systemDefault());
+        return formatter.format(date.toInstant());
     }
 }

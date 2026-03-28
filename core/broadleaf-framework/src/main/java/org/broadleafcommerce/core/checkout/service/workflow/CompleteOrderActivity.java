@@ -30,7 +30,10 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
-import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -68,7 +71,9 @@ public class CompleteOrderActivity extends BaseActivity<ProcessContext<CheckoutS
     }
 
     protected String determineOrderNumber(Order order) {
-        return new SimpleDateFormat("yyyyMMddHHmmssS").format(SystemTime.asDate()) + order.getId();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmssSSS");
+        LocalDateTime now = LocalDateTime.ofInstant(SystemTime.asDate().toInstant(), ZoneId.systemDefault());
+        return formatter.format(now) + order.getId();
     }
 
     protected OrderStatus getCompletedStatus() {

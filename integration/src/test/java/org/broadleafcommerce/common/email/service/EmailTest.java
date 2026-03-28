@@ -35,7 +35,7 @@ public class EmailTest extends TestNGSiteIntegrationSetup {
     
     private GreenMail greenMail;
 
-    @BeforeEachClass
+    @BeforeAll
     protected void setupEmailTest() {
         greenMail = new GreenMail(
                 new ServerSetup[] {
@@ -45,7 +45,7 @@ public class EmailTest extends TestNGSiteIntegrationSetup {
         greenMail.start();
     }
 
-    @AfterEachlass
+    @AfterAll
     protected void tearDownEmailTest() {
         greenMail.stop();
     }

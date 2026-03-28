@@ -17,8 +17,7 @@
  */
 package org.broadleafcommerce.common.logging;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 /**
@@ -32,7 +31,7 @@ import java.util.Date;
  *
  * <li><code>SystemSupportLoggerAdapter.dateTimeFormat</code> - The date and time format to be used in the output messages.
  * The pattern describing the date and time format is defined by
- * <a href="http://docs.oracle.com/javase/1.5.0/docs/api/java/text/SimpleDateFormat.html"><code>SimpleDateFormat</code></a>.
+ * <a href="https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html"><code>DateTimeFormatter</code></a>.
  * If the format is not specified or is invalid, the number of milliseconds since start up will be output. </li>
  *
  * <li><code>SystemSupportLoggerAdapter.showThreadName</code> - Set to <code>true</code> if you want to output the current
@@ -252,9 +251,9 @@ public class SystemSupportLoggerAdapter extends AbstractSupportLoggerAdapter imp
         return Boolean.valueOf(property);
     }
 
-    protected DateFormat getDateFormatter() {
+    protected DateTimeFormatter getDateFormatter() {
         String property = System.getProperty(DATE_TIME_FORMAT_KEY, "HH:mm:ss");
-        return new SimpleDateFormat(property);
+        return DateTimeFormatter.ofPattern(property);
     }
 
     protected boolean getShowThreadName() {
