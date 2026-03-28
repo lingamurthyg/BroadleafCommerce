@@ -25,7 +25,7 @@ import org.springframework.test.context.ContextHierarchy;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 
 @ContextHierarchy(@ContextConfiguration(name="siteRoot"))
 public class RuntimeEnvironmentPropertiesManagerTest extends TestNGSiteIntegrationSetup {

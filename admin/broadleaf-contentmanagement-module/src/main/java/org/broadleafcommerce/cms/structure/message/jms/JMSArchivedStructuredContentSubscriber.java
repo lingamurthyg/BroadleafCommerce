@@ -19,7 +19,7 @@ package org.broadleafcommerce.cms.structure.message.jms;
 
 import java.util.HashMap;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import javax.jms.JMSException;
 import javax.jms.Message;
 import javax.jms.MessageListener;

@@ -30,7 +30,7 @@ import com.google.common.collect.ImmutableMap;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 
 /**
  * <p>The following processor will add any Payment Gateway specific Card Type 'codes' to the model if

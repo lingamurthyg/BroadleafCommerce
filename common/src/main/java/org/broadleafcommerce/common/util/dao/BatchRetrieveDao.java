@@ -17,7 +17,7 @@
  */
 package org.broadleafcommerce.common.util.dao;
 
-import javax.persistence.Query;
+import jakarta.persistence.Query;
 import java.util.ArrayList;
 import java.util.List;
 

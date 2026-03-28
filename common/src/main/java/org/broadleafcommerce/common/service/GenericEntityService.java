@@ -21,7 +21,7 @@ package org.broadleafcommerce.common.service;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.EntityManager;
+import jakarta.persistence.EntityManager;
 
 /**
  * CRUD methods for generic entities

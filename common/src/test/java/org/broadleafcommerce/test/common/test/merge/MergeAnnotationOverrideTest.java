@@ -19,7 +19,7 @@ package org.broadleafcommerce.test.common.test.merge;
 
 import org.broadleafcommerce.common.extensibility.FrameworkXmlBeanDefinitionReader;
 import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -27,7 +27,7 @@ import org.springframework.context.annotation.ImportResource;
 import org.springframework.test.context.junit4.SpringRunner;
 import java.util.Iterator;
 import java.util.Set;
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 
 /**
  * @author Nick Crum ncrum

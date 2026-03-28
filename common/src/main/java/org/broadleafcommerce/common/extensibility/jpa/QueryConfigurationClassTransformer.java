@@ -44,12 +44,12 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
 
-import javax.persistence.LockModeType;
-import javax.persistence.NamedNativeQueries;
-import javax.persistence.NamedNativeQuery;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.QueryHint;
+import jakarta.persistence.LockModeType;
+import jakarta.persistence.NamedNativeQueries;
+import jakarta.persistence.NamedNativeQuery;
+import jakarta.persistence.NamedQueries;
+import jakarta.persistence.NamedQuery;
+import jakarta.persistence.QueryHint;
 
 /**
  * Detects any externally registered {@link NamedQueries} or {@link NamedNativeQueries} and adds them to the first detected

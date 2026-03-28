@@ -39,8 +39,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.annotation.Resource;
+import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * @author Chris Kittrell (ckittrell)

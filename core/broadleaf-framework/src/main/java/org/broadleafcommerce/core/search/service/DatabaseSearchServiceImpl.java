@@ -42,7 +42,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 
 import net.sf.ehcache.Cache;
 import net.sf.ehcache.CacheManager;

@@ -24,7 +24,7 @@ import org.broadleafcommerce.common.config.BroadleafEnvironmentConfiguringApplic
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
@@ -43,13 +43,13 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class RuntimeEnvironmentProfilesTest {
 
     
-    @BeforeClass
+    @BeforeEachClass
     public static void setRuntimeEnvironment() {
         System.setProperty(BroadleafEnvironmentConfiguringApplicationListener.DEPRECATED_RUNTIME_ENVIRONMENT_KEY, "production");
         System.setProperty("spring.profiles.active", "some-other-environment");
     }
     
-    @AfterClass
+    @AfterEachlass
     public static void clearRuntimeEnvironment() {
         System.clearProperty(BroadleafEnvironmentConfiguringApplicationListener.DEPRECATED_RUNTIME_ENVIRONMENT_KEY);
         System.clearProperty("spring.profiles.active");

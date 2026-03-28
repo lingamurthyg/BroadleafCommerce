@@ -22,7 +22,7 @@ package org.broadleafcommerce.test.common.condition;
 
 import org.broadleafcommerce.common.condition.ConditionalOnBroadleafModule;
 import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -38,7 +38,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 
 public class CustomerPhoneControllerTest extends TestNGSiteIntegrationSetup {
 
@@ -53,7 +53,7 @@ public class CustomerPhoneControllerTest extends TestNGSiteIntegrationSetup {
     private MockHttpServletRequest request;
     private static final String SUCCESS = "customerPhones";
 
-    @BeforeMethod(alwaysRun = true, dependsOnMethods = "springTestContextBeforeTestMethod")
+    @BeforeEachMethod(alwaysRun = true, dependsOnMethods = "springTestContextBeforeTestMethod")
     protected void setupCustomerId(Method testMethod) throws Exception {
         userId = customerService.readCustomerByUsername("customer1").getId();
     }

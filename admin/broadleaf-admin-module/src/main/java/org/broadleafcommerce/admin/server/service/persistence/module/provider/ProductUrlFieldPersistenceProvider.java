@@ -28,7 +28,7 @@ import org.broadleafcommerce.openadmin.server.service.type.MetadataProviderRespo
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import java.io.Serializable;
 
 @Component("blProductUrlFieldPersistenceProvider")

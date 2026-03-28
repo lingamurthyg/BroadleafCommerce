@@ -34,7 +34,7 @@ import org.broadleafcommerce.core.order.service.call.OrderItemRequestDTO;
 import org.broadleafcommerce.core.workflow.ProcessContext;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 
 /**
  * Very similar to the {@link CheckAddAvailabilityActivity} but in the blUpdateItemWorkflow instead

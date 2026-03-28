@@ -17,8 +17,8 @@
  */
 package org.broadleafcommerce.common.extensibility.jpa;
 
-import javax.persistence.NamedNativeQueries;
-import javax.persistence.NamedQueries;
+import jakarta.persistence.NamedNativeQueries;
+import jakarta.persistence.NamedQueries;
 
 /**
  * Interface for classes annotated with {@link NamedQueries} and {@link NamedNativeQueries}.

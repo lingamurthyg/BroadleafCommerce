@@ -32,8 +32,8 @@ import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.Resource;
 
 /**
  * Adds special behavior specific for Typed Entities during any entity persistence flows.

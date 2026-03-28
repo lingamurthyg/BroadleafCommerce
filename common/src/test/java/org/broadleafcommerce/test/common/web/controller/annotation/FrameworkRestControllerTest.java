@@ -22,7 +22,7 @@ package org.broadleafcommerce.test.common.web.controller.annotation;
 
 import org.broadleafcommerce.common.web.controller.annotation.EnableFrameworkRestControllers;
 import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -26,7 +26,7 @@ import org.testng.annotations.Test;
 import com.icegreen.greenmail.util.GreenMail;
 import com.icegreen.greenmail.util.ServerSetup;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 
 public class EmailTest extends TestNGSiteIntegrationSetup {
 
@@ -35,7 +35,7 @@ public class EmailTest extends TestNGSiteIntegrationSetup {
     
     private GreenMail greenMail;
 
-    @BeforeClass
+    @BeforeEachClass
     protected void setupEmailTest() {
         greenMail = new GreenMail(
                 new ServerSetup[] {
@@ -45,7 +45,7 @@ public class EmailTest extends TestNGSiteIntegrationSetup {
         greenMail.start();
     }
 
-    @AfterClass
+    @AfterEachlass
     protected void tearDownEmailTest() {
         greenMail.stop();
     }

@@ -23,8 +23,8 @@ import org.broadleafcommerce.common.persistence.EntityConfiguration;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceUnit;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceUnit;
 
 /**
  * Provides methods to easily access entities managed by the 'blPU' {@link PersistenceUnit}.

@@ -46,7 +46,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import java.text.SimpleDateFormat;
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 
 /**
  * Strategy to handle confirming "UNCONFIRMED" transactions on an Order Payment during the checkout workflow.

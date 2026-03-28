@@ -69,10 +69,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import javax.annotation.Resource;
-import javax.persistence.Embeddable;
-import javax.persistence.EntityManager;
-import javax.persistence.OneToMany;
+import jakarta.annotation.Resource;
+import jakarta.persistence.Embeddable;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.OneToMany;
 
 /**
  * Provides persistence (read/write) behavior for rule builder fields. This includes two types: Rule with quantity, and

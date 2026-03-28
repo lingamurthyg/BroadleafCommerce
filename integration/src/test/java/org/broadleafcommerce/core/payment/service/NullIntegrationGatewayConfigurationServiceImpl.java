@@ -18,7 +18,7 @@
 
 package org.broadleafcommerce.core.payment.service;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 
 import org.broadleafcommerce.common.payment.service.AbstractPaymentGatewayConfigurationService;
 import org.broadleafcommerce.common.payment.service.PaymentGatewayConfiguration;

@@ -21,7 +21,7 @@ import org.broadleafcommerce.test.config.AdminSpringBootTestConfiguration;
 import org.broadleafcommerce.test.helper.AdminApplication;
 import org.broadleafcommerce.test.helper.AdminTestHelper;
 import org.broadleafcommerce.test.helper.TestAdminRequestFilter;
-import org.junit.Before;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -36,7 +36,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.filter.RequestContextFilter;
 
-import javax.servlet.Filter;
+import jakarta.servlet.Filter;
 
 /**
  * This is a convenient base class for launching a spring boot test against the admin application. The primary testing technologies
@@ -185,7 +185,7 @@ public abstract class JUnitSpringBootAdminIntegrationSetup {
 
     private MockMvc mockMvc;
 
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
         Filter[] filters = getOrderedFilters(openEntityManagerInViewFilter, requestContextFilter, adminRequestFilter);
         String[] roles = getRequestRoles("PERMISSION_ALL_DEPLOYMENT");

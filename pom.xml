@@ -45,22 +45,33 @@
     </repositories>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.version>4.3.18.RELEASE</spring.version>
-        <spring.security.version>4.2.7.RELEASE</spring.security.version>
-        <spring.boot.version>1.5.15.RELEASE</spring.boot.version>
-        <spring.mobile.version>1.1.5.RELEASE</spring.mobile.version>
-        <jackson.version>2.8.11</jackson.version>
-        <maven.source.plugin.version>2.4</maven.source.plugin.version>
-        <geb.version>1.0</geb.version>
-        <spock.core.version>1.1-groovy-2.4</spock.core.version>
-        <spock.spring.version>1.1-groovy-2.4</spock.spring.version>
-        <selenium.version>2.43.1</selenium.version>
-        <groovy.version>2.4.15</groovy.version>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <java.version>21</java.version>
+        <spring.version>6.1.4</spring.version>
+        <spring.security.version>6.2.2</spring.security.version>
+        <spring.boot.version>3.2.3</spring.boot.version>
+        <spring.mobile.version>2.0.0.M3</spring.mobile.version>
+        <jackson.version>2.16.1</jackson.version>
+        <maven.source.plugin.version>3.3.0</maven.source.plugin.version>
+        <geb.version>6.0</geb.version>
+        <spock.core.version>2.3-groovy-4.0</spock.core.version>
+        <spock.spring.version>2.3-groovy-4.0</spock.spring.version>
+        <selenium.version>4.18.1</selenium.version>
+        <groovy.version>4.0.18</groovy.version>
         <project.uri>${project.baseUri}</project.uri>
         <broadleaf-presentation.version>1.0.2-GA</broadleaf-presentation.version>
-        <lombok.version>1.16.22</lombok.version>
+        <lombok.version>1.18.30</lombok.version>
         <database.starter.version>1.0.1-GA</database.starter.version>
-        <closure.compiler.version>v20180506</closure.compiler.version>
+        <closure.compiler.version>v20231112</closure.compiler.version>
+        <hibernate.version>6.4.4.Final</hibernate.version>
+        <jakarta.persistence.version>3.1.0</jakarta.persistence.version>
+        <jakarta.validation.version>3.0.2</jakarta.validation.version>
+        <jakarta.servlet.version>6.0.0</jakarta.servlet.version>
+        <hibernate.validator.version>8.0.1.Final</hibernate.validator.version>
+        <jakarta.mail.version>2.1.2</jakarta.mail.version>
+        <jakarta.xml.bind.version>4.0.1</jakarta.xml.bind.version>
+        <jaxb.runtime.version>4.0.4</jaxb.runtime.version>
     </properties>
     <scm>
         <connection>scm:git:git@github.com:BroadleafCommerce/BroadleafCommerce.git</connection>
@@ -74,10 +85,18 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.1</version>
+                    <version>3.12.1</version>
                     <configuration>
-                        <source>1.7</source>
-                        <target>1.7</target>
+                        <source>21</source>
+                        <target>21</target>
+                        <release>21</release>
+                        <annotationProcessorPaths>
+                            <path>
+                                <groupId>org.projectlombok</groupId>
+                                <artifactId>lombok</artifactId>
+                                <version>${lombok.version}</version>
+                            </path>
+                        </annotationProcessorPaths>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -93,7 +112,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.10</version>
+                    <version>3.2.5</version>
                     <configuration>
                         <includes>
                             <include>**/Test*.java,**/*Test.java,**/*TestCase.java</include>
@@ -126,9 +145,9 @@
                 <plugin>
                     <groupId>org.codehaus.gmavenplus</groupId>
                     <artifactId>gmavenplus-plugin</artifactId>
-                    <version>1.5</version>
+                    <version>3.0.2</version>
                     <configuration>
-                        <targetBytecode>1.7</targetBytecode>
+                        <targetBytecode>21</targetBytecode>
                     </configuration>
                     <executions>
                         <execution>
@@ -304,7 +323,7 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.7.9</version>
+                <version>0.8.11</version>
                 <executions>
                     <!-- Unit test coverage prep; generates jacoco.exec -->
                     <execution>
@@ -437,7 +456,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>2.9.1</version>
+                        <version>3.6.3</version>
                         <executions>
                             <execution>
                                 <id>attach-javadocs</id>
@@ -572,52 +591,29 @@
 
             <!-- Hibernate Libraries -->
             <dependency>
-                <groupId>org.hibernate.javax.persistence</groupId>
-                <artifactId>hibernate-jpa-2.0-api</artifactId>
-                <version>1.0.0.Final</version>
+                <groupId>jakarta.persistence</groupId>
+                <artifactId>jakarta.persistence-api</artifactId>
+                <version>${jakarta.persistence.version}</version>
                 <scope>compile</scope>
             </dependency>
             <dependency>
-                <groupId>org.hibernate</groupId>
+                <groupId>org.hibernate.orm</groupId>
                 <artifactId>hibernate-envers</artifactId>
-                <version>4.1.11.Final</version>
+                <version>${hibernate.version}</version>
                 <scope>compile</scope>
             </dependency>
             <dependency>
-                <groupId>org.hibernate</groupId>
+                <groupId>org.hibernate.orm</groupId>
                 <artifactId>hibernate-core</artifactId>
-                <version>4.1.11.Final</version>
+                <version>${hibernate.version}</version>
                 <type>jar</type>
                 <scope>compile</scope>
             </dependency>
             <dependency>
-                <groupId>org.hibernate</groupId>
-                <artifactId>hibernate-entitymanager</artifactId>
-                <version>4.1.11.Final</version>
-                <type>jar</type>
+                <groupId>org.hibernate.orm</groupId>
+                <artifactId>hibernate-jcache</artifactId>
+                <version>${hibernate.version}</version>
                 <scope>compile</scope>
-                <exclusions>
-                    <exclusion>
-                        <groupId>asm</groupId>
-                        <artifactId>asm</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>cglib</groupId>
-                        <artifactId>cglib</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <dependency>
-                <groupId>org.hibernate</groupId>
-                <artifactId>hibernate-ehcache</artifactId>
-                <version>4.1.11.Final</version>
-                <scope>compile</scope>
-                <exclusions>
-                    <exclusion>
-                        <artifactId>ehcache-core</artifactId>
-                        <groupId>net.sf.ehcache</groupId>
-                    </exclusion>
-                </exclusions>
             </dependency>
 
             <!-- Commons Libraries -->
@@ -639,16 +635,9 @@
                 </exclusions>
             </dependency>
             <dependency>
-                <groupId>commons-collections</groupId>
-                <artifactId>commons-collections</artifactId>
-                <version>3.2.2</version>
-                <type>jar</type>
-                <scope>compile</scope>
-            </dependency>
-            <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-collections4</artifactId>
-                <version>4.1</version>
+                <version>4.4</version>
                 <type>jar</type>
                 <scope>compile</scope>
             </dependency>
@@ -672,9 +661,9 @@
                 <scope>runtime</scope>
             </dependency>
             <dependency>
-                <groupId>commons-fileupload</groupId>
-                <artifactId>commons-fileupload</artifactId>
-                <version>1.3.3</version>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-fileupload2-jakarta</artifactId>
+                <version>2.0.0-M1</version>
                 <type>jar</type>
                 <scope>compile</scope>
             </dependency>
@@ -687,28 +676,28 @@
             <dependency>
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
-                <version>2.4</version>
+                <version>2.15.1</version>
                 <type>jar</type>
                 <scope>compile</scope>
             </dependency>
             <dependency>
-                <groupId>commons-dbcp</groupId>
-                <artifactId>commons-dbcp</artifactId>
-                <version>1.2.2</version>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-dbcp2</artifactId>
+                <version>2.11.0</version>
                 <type>jar</type>
                 <scope>compile</scope>
             </dependency>
             <dependency>
                 <groupId>commons-codec</groupId>
                 <artifactId>commons-codec</artifactId>
-                <version>1.4</version>
+                <version>1.16.0</version>
                 <type>jar</type>
                 <scope>compile</scope>
             </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
-                <version>3.3.2</version>
+                <version>3.14.0</version>
                 <type>jar</type>
                 <scope>compile</scope>
             </dependency>
@@ -782,33 +771,50 @@
             </dependency>
             <dependency>
                 <groupId>org.apache.velocity</groupId>
-                <artifactId>velocity</artifactId>
-                <version>1.6.2</version>
+                <artifactId>velocity-engine-core</artifactId>
+                <version>2.3</version>
                 <type>jar</type>
                 <scope>compile</scope>
             </dependency>
             <dependency>
-                <groupId>javax.mail</groupId>
-                <artifactId>mail</artifactId>
-                <version>1.4.1</version>
+                <groupId>jakarta.mail</groupId>
+                <artifactId>jakarta.mail-api</artifactId>
+                <version>2.1.2</version>
                 <type>jar</type>
                 <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.angus</groupId>
+                <artifactId>angus-mail</artifactId>
+                <version>2.0.3</version>
+                <scope>runtime</scope>
             </dependency>
 
             <!-- XML Libraries -->
             <dependency>
                 <groupId>org.apache.xmlbeans</groupId>
                 <artifactId>xmlbeans</artifactId>
-                <version>2.4.0</version>
+                <version>5.2.0</version>
                 <type>jar</type>
                 <scope>compile</scope>
             </dependency>
             <dependency>
-                <groupId>javax.xml.bind</groupId>
-                <artifactId>jsr173_api</artifactId>
-                <version>1.0</version>
+                <groupId>jakarta.xml.bind</groupId>
+                <artifactId>jakarta.xml.bind-api</artifactId>
+                <version>4.0.1</version>
                 <type>jar</type>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jaxb</groupId>
+                <artifactId>jaxb-runtime</artifactId>
+                <version>4.0.4</version>
                 <scope>runtime</scope>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.annotation</groupId>
+                <artifactId>jakarta.annotation-api</artifactId>
+                <version>3.0.0</version>
             </dependency>
             <dependency>
                 <groupId>com.thoughtworks.xstream</groupId>
@@ -863,9 +869,9 @@
 
             <!-- Servlet API -->
             <dependency>
-                <groupId>javax.servlet</groupId>
-                <artifactId>javax.servlet-api</artifactId>
-                <version>3.0.1</version>
+                <groupId>jakarta.servlet</groupId>
+                <artifactId>jakarta.servlet-api</artifactId>
+                <version>${jakarta.servlet.version}</version>
                 <type>jar</type>
                 <scope>provided</scope>
             </dependency>
@@ -883,14 +889,20 @@
             <dependency>
                 <groupId>com.icegreen</groupId>
                 <artifactId>greenmail</artifactId>
-                <version>1.5.2</version>
+                <version>2.0.1</version>
                 <type>jar</type>
                 <scope>test</scope>
             </dependency>
             <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>4.12</version>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter</artifactId>
+                <version>5.10.2</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.vintage</groupId>
+                <artifactId>junit-vintage-engine</artifactId>
+                <version>5.10.2</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
@@ -954,7 +966,7 @@
             <dependency>
                 <artifactId>solr-solrj</artifactId>
                 <groupId>org.apache.solr</groupId>
-                <version>5.3.1</version>
+                <version>9.4.1</version>
                 <type>jar</type>
                 <scope>compile</scope>
                 <exclusions>
@@ -973,7 +985,7 @@
             <dependency>
                 <artifactId>solr-core</artifactId>
                 <groupId>org.apache.solr</groupId>
-                <version>5.3.1</version>
+                <version>9.4.1</version>
                 <type>jar</type>
                 <scope>compile</scope>
                 <exclusions>
@@ -1028,8 +1040,8 @@
                     </exclusion>
                     <!-- security vulnerability in version 1.2.1. We explicity include version 1.3.1 elsewhere -->
                     <exclusion>
-                        <groupId>commons-fileupload</groupId>
-                        <artifactId>commons-fileupload</artifactId>
+                        <groupId>org.apache.commons</groupId>
+                        <artifactId>commons-fileupload2-jakarta</artifactId>
                     </exclusion>
                     <!-- BLC is dependent on ASM 3.3 while Solr Core is dependent on 4.1. These dependencies should
                          thusly be excluded here -->
@@ -1073,7 +1085,7 @@
             <dependency>
                 <groupId>org.apache.hadoop</groupId>
                 <artifactId>hadoop-annotations</artifactId>
-                <version>2.6.5</version>
+                <version>9.6</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.hadoop</groupId>
@@ -1099,29 +1111,29 @@
             <!-- Byte Code Manipulation Libraries -->
             <dependency>
                 <groupId>cglib</groupId>
-                <artifactId>cglib-nodep</artifactId>
-                <version>2.1_3</version>
+                <artifactId>cglib</artifactId>
+                <version>3.3.0</version>
                 <type>jar</type>
                 <scope>compile</scope>
             </dependency>
             <dependency>
-                <groupId>asm</groupId>
+                <groupId>org.ow2.asm</groupId>
                 <artifactId>asm</artifactId>
-                <version>3.3</version>
+                <version>9.6</version>
                 <type>jar</type>
                 <scope>compile</scope>
             </dependency>
             <dependency>
-                <groupId>asm</groupId>
+                <groupId>org.ow2.asm</groupId>
                 <artifactId>asm-commons</artifactId>
-                <version>3.3</version>
+                <version>9.6</version>
                 <type>jar</type>
                 <scope>compile</scope>
             </dependency>
             <dependency>
                 <groupId>org.javassist</groupId>
                 <artifactId>javassist</artifactId>
-                <version>3.17.1-GA</version>
+                <version>3.30.2-GA</version>
                 <scope>compile</scope>
             </dependency>
 
@@ -1129,7 +1141,7 @@
             <dependency>
                 <groupId>org.quartz-scheduler</groupId>
                 <artifactId>quartz</artifactId>
-                <version>2.2.0</version>
+                <version>2.3.2</version>
                 <type>jar</type>
                 <scope>compile</scope>
             </dependency>
@@ -1168,9 +1180,9 @@
                 <scope>runtime</scope>
             </dependency>
             <dependency>
-                <groupId>net.sf.ehcache</groupId>
+                <groupId>org.ehcache</groupId>
                 <artifactId>ehcache</artifactId>
-                <version>2.10.2</version>
+                <version>3.10.8</version>
                 <scope>compile</scope>
                 <type>jar</type>
             </dependency>
@@ -1461,7 +1473,7 @@
             <dependency>
                 <groupId>org.hsqldb</groupId>
                 <artifactId>hsqldb</artifactId>
-                <version>2.3.2</version>
+                <version>2.7.2</version>
                 <type>jar</type>
                 <scope>test</scope>
             </dependency>
@@ -1477,7 +1489,7 @@
             <dependency>
                 <groupId>org.aspectj</groupId>
                 <artifactId>aspectjweaver</artifactId>
-                <version>1.6.5</version>
+                <version>1.9.21</version>
                 <type>jar</type>
                 <scope>compile</scope>
             </dependency>
@@ -1497,7 +1509,7 @@
             <dependency>
                 <groupId>eu.medsea.mimeutil</groupId>
                 <artifactId>mime-util</artifactId>
-                <version>2.1.3</version>
+                <version>2.1.2</version>
                 <type>jar</type>
                 <scope>compile</scope>
                 <exclusions>
@@ -1544,8 +1556,8 @@
                 <version>2.1.0</version>
                 <exclusions>
                     <exclusion>
-                        <groupId>commons-fileupload</groupId>
-                        <artifactId>commons-fileupload</artifactId>
+                        <groupId>org.apache.commons</groupId>
+                        <artifactId>commons-fileupload2-jakarta</artifactId>
                     </exclusion>
                     <exclusion>
                         <groupId>xalan</groupId>
@@ -1569,19 +1581,19 @@
                 <version>2.7.2</version>
             </dependency>
             <dependency>
-                <groupId>org.hibernate</groupId>
+                <groupId>org.hibernate.validator</groupId>
                 <artifactId>hibernate-validator</artifactId>
-                <version>5.4.1.Final</version>
+                <version>8.0.1.Final</version>
             </dependency>
             <dependency>
-                <groupId>javax.validation</groupId>
-                <artifactId>validation-api</artifactId>
-                <version>1.1.0.Final</version>
+                <groupId>jakarta.validation</groupId>
+                <artifactId>jakarta.validation-api</artifactId>
+                <version>${jakarta.validation.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
-                <version>12.0</version>
+                <version>33.0.0-jre</version>
             </dependency>
             <dependency>
                 <groupId>de.jkeylockmanager</groupId>

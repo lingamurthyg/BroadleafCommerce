@@ -46,7 +46,7 @@ import org.springframework.ui.Model;
 import java.util.List;
 import java.util.Objects;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 
 /**
  * @author Chris Kittrell (ckittrell)

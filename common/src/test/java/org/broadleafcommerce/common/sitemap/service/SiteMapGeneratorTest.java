@@ -34,9 +34,9 @@ import org.broadleafcommerce.common.sitemap.service.SiteMapGenerator;
 import org.broadleafcommerce.common.sitemap.service.SiteMapServiceImpl;
 import org.broadleafcommerce.common.web.BaseUrlResolver;
 import org.easymock.EasyMock;
-import org.junit.After;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.Assert;
-import org.junit.Before;
+import org.junit.jupiter.api.BeforeEach;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -68,7 +68,7 @@ public class SiteMapGeneratorTest {
         }
     };
 
-    @Before
+    @BeforeEach
     public void setup() {
         FileServiceProvider defaultFileServiceProvider = new FileSystemFileServiceProvider();
         fileService.setDefaultFileServiceProvider(defaultFileServiceProvider);

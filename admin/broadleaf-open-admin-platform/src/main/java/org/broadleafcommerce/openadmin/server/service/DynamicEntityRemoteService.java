@@ -48,7 +48,7 @@ import java.lang.reflect.Constructor;
 import java.util.Collections;
 import java.util.Map;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 
 /**
  * @author jfischer

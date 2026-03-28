@@ -35,7 +35,7 @@ import java.util.HashMap;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 
 @Service("blCheckoutService")
 public class CheckoutServiceImpl implements CheckoutService {

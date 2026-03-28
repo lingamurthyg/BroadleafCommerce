@@ -24,7 +24,7 @@ import org.broadleafcommerce.common.config.BroadleafEnvironmentConfiguringApplic
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.ConfigurableEnvironment;
@@ -49,8 +49,8 @@ public class FilesystemPropertyOverridesTest {
     @Autowired
     protected Environment env;
     
-    // Inside of a static @BeforeClass to ensure this code executes before Spring starts the appctx
-    @BeforeClass
+    // Inside of a static @BeforeEachClass to ensure this code executes before Spring starts the appctx
+    @BeforeEachClass
     public static void setOverrideProperty() {
         String overridePropertiesPath = FilesystemPropertyOverridesTest.class.getClassLoader().getResource("overridestest.properties").getFile();
         overridePropertiesPath = overridePropertiesPath.replace("%20", " ");
@@ -59,7 +59,7 @@ public class FilesystemPropertyOverridesTest {
     }
     
     // don't impact other tests with my property override
-    @AfterClass
+    @AfterEachlass
     public static void clearOverrideProperty() {
         System.clearProperty(BroadleafEnvironmentConfiguringApplicationListener.PROPERTY_OVERRIDES_PROPERTY);
     }

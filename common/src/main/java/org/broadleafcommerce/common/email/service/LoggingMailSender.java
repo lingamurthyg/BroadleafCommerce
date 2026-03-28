@@ -20,8 +20,8 @@ package org.broadleafcommerce.common.email.service;
 import java.io.ByteArrayOutputStream;
 
 import javax.activation.DataHandler;
-import javax.mail.internet.MimeMessage;
-import javax.mail.internet.MimeMultipart;
+import jakarta.mail.internet.MimeMessage;
+import jakarta.mail.internet.MimeMultipart;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

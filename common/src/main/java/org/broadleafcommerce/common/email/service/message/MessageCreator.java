@@ -28,8 +28,8 @@ import org.springframework.mail.javamail.MimeMessagePreparator;
 
 import java.util.Map;
 
-import javax.mail.internet.MimeMessage;
-import javax.mail.util.ByteArrayDataSource;
+import jakarta.mail.internet.MimeMessage;
+import jakarta.mail.util.ByteArrayDataSource;
 
 public abstract class MessageCreator {
 

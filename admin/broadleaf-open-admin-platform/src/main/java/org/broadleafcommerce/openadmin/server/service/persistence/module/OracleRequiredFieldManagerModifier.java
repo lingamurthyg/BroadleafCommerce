@@ -26,9 +26,9 @@ import org.springframework.stereotype.Component;
 import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.List;
-import javax.annotation.Resource;
-import javax.persistence.Column;
-import javax.persistence.EntityManager;
+import jakarta.annotation.Resource;
+import jakarta.persistence.Column;
+import jakarta.persistence.EntityManager;
 
 /**
  * Oracle-only field modifier that is used to ensure that non-nullable fields are not persisted with empty strings and

@@ -17,7 +17,7 @@
  */
 package org.broadleafcommerce.common.rule;
 
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 import java.io.Serializable;
 
 /**

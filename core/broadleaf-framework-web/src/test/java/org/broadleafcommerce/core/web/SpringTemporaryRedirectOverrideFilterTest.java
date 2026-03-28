@@ -19,8 +19,8 @@ package org.broadleafcommerce.core.web;
 
 import junit.framework.TestCase;
 
-import javax.servlet.FilterConfig;
-import javax.servlet.ServletContext;
+import jakarta.servlet.FilterConfig;
+import jakarta.servlet.ServletContext;
 import java.util.Enumeration;
 
 /**

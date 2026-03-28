@@ -23,7 +23,7 @@ import static org.junit.Assert.assertEquals;
 import org.apache.xerces.impl.xs.opti.DefaultNode;
 import org.broadleafcommerce.common.extensibility.context.merge.handlers.SchemaLocationNodeValueMerge;
 import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.w3c.dom.DOMException;
 import org.w3c.dom.Node;
 
@@ -38,7 +38,7 @@ public class SchemaLocationMergeTest {
 
     protected static SchemaLocationNodeValueMerge merge;
     
-    @BeforeClass
+    @BeforeEachClass
     public static void setup() {
         merge = new SchemaLocationNodeValueMerge();
     }

@@ -23,7 +23,7 @@ package org.broadleafcommerce.test.common.context.enable;
 import org.broadleafcommerce.common.config.BroadleafEnvironmentConfiguringApplicationListener;
 import org.broadleafcommerce.common.config.EnableBroadleafSiteAutoConfiguration;
 import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.beans.factory.annotation.Autowired;

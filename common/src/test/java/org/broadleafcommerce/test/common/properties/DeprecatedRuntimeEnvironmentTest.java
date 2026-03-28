@@ -24,7 +24,7 @@ import org.broadleafcommerce.common.config.BroadleafEnvironmentConfiguringApplic
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
@@ -42,12 +42,12 @@ import org.springframework.test.context.junit4.SpringRunner;
 @DirtiesContext
 public class DeprecatedRuntimeEnvironmentTest {
 
-    @BeforeClass
+    @BeforeEachClass
     public static void setRuntimeEnvironment() {
         System.setProperty(BroadleafEnvironmentConfiguringApplicationListener.DEPRECATED_RUNTIME_ENVIRONMENT_KEY, "production");
     }
     
-    @AfterClass
+    @AfterEachlass
     public static void clearRuntimeEnvironment() {
         System.clearProperty(BroadleafEnvironmentConfiguringApplicationListener.DEPRECATED_RUNTIME_ENVIRONMENT_KEY);
     }

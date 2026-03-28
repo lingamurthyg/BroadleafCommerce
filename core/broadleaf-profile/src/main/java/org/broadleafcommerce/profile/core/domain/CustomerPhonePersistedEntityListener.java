@@ -17,9 +17,9 @@
  */
 package org.broadleafcommerce.profile.core.domain;
 
-import javax.persistence.PostPersist;
-import javax.persistence.PostRemove;
-import javax.persistence.PostUpdate;
+import jakarta.persistence.PostPersist;
+import jakarta.persistence.PostRemove;
+import jakarta.persistence.PostUpdate;
 
 import org.broadleafcommerce.common.util.ApplicationContextHolder;
 import org.springframework.transaction.support.TransactionSynchronizationAdapter;

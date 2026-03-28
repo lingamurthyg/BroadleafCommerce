@@ -28,7 +28,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 
 @Component("blOfferActivity")
 public class OfferActivity extends BaseActivity<ProcessContext<Order>> {

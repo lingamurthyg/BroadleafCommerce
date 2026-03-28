@@ -23,7 +23,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.RequestScope;
 import java.util.ArrayList;
 import java.util.List;
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 
 /**
  * Keeps track of the resources needed for &lt;blc:bundle&gt; and &lt;blc:bundlepreload&gt; tags so that the list

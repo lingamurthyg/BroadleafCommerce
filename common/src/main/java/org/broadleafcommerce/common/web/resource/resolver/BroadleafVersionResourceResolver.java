@@ -31,8 +31,8 @@ import org.springframework.web.servlet.resource.VersionStrategy;
 import java.util.List;
 import java.util.Map;
 
-import javax.annotation.PostConstruct;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.annotation.PostConstruct;
+import jakarta.servlet.http.HttpServletRequest;
 
 /**
  * Wraps Spring's {@link VersionResourceResolver} but adds in support to disable with 

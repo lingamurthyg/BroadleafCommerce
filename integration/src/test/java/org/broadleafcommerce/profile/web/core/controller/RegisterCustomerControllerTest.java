@@ -36,7 +36,7 @@ import org.testng.annotations.Test;
 import com.icegreen.greenmail.util.GreenMail;
 import com.icegreen.greenmail.util.ServerSetup;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 
 public class RegisterCustomerControllerTest extends TestNGSiteIntegrationSetup {
 
@@ -48,7 +48,7 @@ public class RegisterCustomerControllerTest extends TestNGSiteIntegrationSetup {
 
     private GreenMail greenMail;
 
-    @BeforeClass
+    @BeforeEachClass
     protected void setupControllerTest() {
         greenMail = new GreenMail(
                 new ServerSetup[] {
@@ -58,7 +58,7 @@ public class RegisterCustomerControllerTest extends TestNGSiteIntegrationSetup {
         greenMail.start();
     }
 
-    @AfterClass
+    @AfterEachlass
     protected void tearDownControllerTest() {
         greenMail.stop();
     }

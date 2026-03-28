@@ -17,7 +17,7 @@
  */
 package org.broadleafcommerce.cms.page.message.jms;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import javax.jms.JMSException;
 import javax.jms.Message;
 import javax.jms.MessageListener;

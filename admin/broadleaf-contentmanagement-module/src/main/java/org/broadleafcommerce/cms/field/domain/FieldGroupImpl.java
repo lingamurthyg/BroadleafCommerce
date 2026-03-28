@@ -34,7 +34,7 @@ import org.hibernate.annotations.Parameter;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 /**
  * Created by bpolster.

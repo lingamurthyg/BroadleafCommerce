@@ -24,8 +24,8 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.ServletException;
 
 /**
  * Used in conjunction with {@link SpringBootBootstrappingServletContextListener}. Since that class

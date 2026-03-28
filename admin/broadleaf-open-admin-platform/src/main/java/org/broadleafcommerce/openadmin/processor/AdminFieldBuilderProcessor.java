@@ -31,7 +31,7 @@ import com.google.common.collect.ImmutableMap;
 
 import java.util.Map;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 
 /**
  * @author Elbert Bautista (elbertbautista)

@@ -28,7 +28,7 @@ import org.springframework.web.servlet.resource.ResourceResolverChain;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 /**
  *
