@@ -243,6 +243,10 @@
             <artifactId>jaxb-runtime</artifactId>
         </dependency>
         <dependency>
+            <groupId>jakarta.annotation</groupId>
+            <artifactId>jakarta.annotation-api</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.google.code.findbugs</groupId>
             <artifactId>jsr305</artifactId>
         </dependency>
@@ -396,8 +400,10 @@
             <artifactId>hibernate-validator</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.codehaus.groovy</groupId>
+            <groupId>org.apache.groovy</groupId>
             <artifactId>groovy-all</artifactId>
+            <version>${groovy.version}</version>
+            <type>pom</type>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -415,11 +421,6 @@
             <artifactId>spring-boot-test</artifactId>
             <version>${spring.boot.version}</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.broadleafcommerce</groupId>
-            <artifactId>broadleaf-common-presentation</artifactId>
-            <version>${broadleaf-presentation.version}</version>
         </dependency>
         <dependency>
             <groupId>commons-validator</groupId>

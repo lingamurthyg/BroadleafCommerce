@@ -20,11 +20,11 @@ package org.broadleafcommerce.common.web.processor;
 import org.apache.commons.lang3.StringUtils;
 import org.broadleafcommerce.common.resource.service.ResourceBundlingService;
 import org.broadleafcommerce.common.web.processor.attributes.ResourceTagAttributes;
-import org.broadleafcommerce.presentation.condition.ConditionalOnTemplating;
-import org.broadleafcommerce.presentation.model.BroadleafTemplateContext;
-import org.broadleafcommerce.presentation.model.BroadleafTemplateElement;
-import org.broadleafcommerce.presentation.model.BroadleafTemplateModel;
-import org.broadleafcommerce.presentation.model.BroadleafTemplateNonVoidElement;
+// import org.broadleafcommerce.presentation.condition.ConditionalOnTemplating;
+// import org.broadleafcommerce.presentation.model.BroadleafTemplateContext;
+// import org.broadleafcommerce.presentation.model.BroadleafTemplateElement;
+// import org.broadleafcommerce.presentation.model.BroadleafTemplateModel;
+// import org.broadleafcommerce.presentation.model.BroadleafTemplateNonVoidElement;
 import org.springframework.stereotype.Component;
 
 import java.security.InvalidParameterException;
@@ -164,7 +164,7 @@ import java.util.Map;
  * @see ResourceBundlingService
  */
 @Component("blResourceBundleProcessor")
-@ConditionalOnTemplating
+// @ConditionalOnTemplating
 public class ResourceBundleProcessor extends AbstractResourceProcessor {
 
     protected final Map<String, String> deferredCssAttributes;

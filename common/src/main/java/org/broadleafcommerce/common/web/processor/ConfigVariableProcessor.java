@@ -19,9 +19,10 @@ package org.broadleafcommerce.common.web.processor;
 
 import org.broadleafcommerce.common.util.BLCSystemProperty;
 import org.broadleafcommerce.common.web.expression.PropertiesVariableExpression;
-import org.broadleafcommerce.presentation.condition.ConditionalOnTemplating;
-import org.broadleafcommerce.presentation.dialect.AbstractBroadleafVariableModifierProcessor;
-import org.broadleafcommerce.presentation.model.BroadleafTemplateContext;
+// Presentation layer dependencies removed
+// import org.broadleafcommerce.presentation.condition.ConditionalOnTemplating;
+// import org.broadleafcommerce.presentation.dialect.AbstractBroadleafVariableModifierProcessor;
+// import org.broadleafcommerce.presentation.model.BroadleafTemplateContext;
 import org.springframework.stereotype.Component;
 
 import com.google.common.collect.ImmutableMap;
@@ -45,15 +46,15 @@ import java.util.Map;
  */
 @Deprecated
 @Component("blConfigVariableProcessor")
-@ConditionalOnTemplating
-public class ConfigVariableProcessor extends AbstractBroadleafVariableModifierProcessor {
+// // @ConditionalOnTemplating - removed due to missing presentation layer
+public class ConfigVariableProcessor /* extends AbstractBroadleafVariableModifierProcessor */ {
 
-    @Override
+    // @Override
     public String getName() {
         return "config";
     }
     
-    @Override
+    // @Override
     public int getPrecedence() {
         return 10000;
     }
@@ -61,8 +62,8 @@ public class ConfigVariableProcessor extends AbstractBroadleafVariableModifierPr
     /* (non-Javadoc)
      * @see org.broadleafcommerce.presentation.dialect.AbstractModelVariableModifierProcessor#populateModelVariables(java.lang.String, java.util.Map, java.util.Map)
      */
-    @Override
-    public Map<String, Object> populateModelVariables(String tagName, Map<String, String> tagAttributes, BroadleafTemplateContext context) {
+    // @Override
+    public Map<String, Object> populateModelVariables(String tagName, Map<String, String> tagAttributes, Object /* BroadleafTemplateContext */ context) {
         String resultVar = tagAttributes.get("resultVar");
         if (resultVar == null) {
             resultVar = "value";

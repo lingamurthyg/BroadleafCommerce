@@ -21,12 +21,12 @@ import org.broadleafcommerce.common.exception.ServiceException;
 import org.broadleafcommerce.common.security.handler.CsrfFilter;
 import org.broadleafcommerce.common.security.service.ExploitProtectionService;
 import org.broadleafcommerce.common.security.service.StaleStateProtectionService;
-import org.broadleafcommerce.presentation.condition.ConditionalOnTemplating;
-import org.broadleafcommerce.presentation.dialect.AbstractBroadleafModelModifierProcessor;
-import org.broadleafcommerce.presentation.model.BroadleafTemplateContext;
-import org.broadleafcommerce.presentation.model.BroadleafTemplateElement;
-import org.broadleafcommerce.presentation.model.BroadleafTemplateModel;
-import org.broadleafcommerce.presentation.model.BroadleafTemplateModelModifierDTO;
+// import org.broadleafcommerce.presentation.condition.ConditionalOnTemplating;
+// import org.broadleafcommerce.presentation.dialect.AbstractBroadleafModelModifierProcessor;
+// import org.broadleafcommerce.presentation.model.BroadleafTemplateContext;
+// import org.broadleafcommerce.presentation.model.BroadleafTemplateElement;
+// import org.broadleafcommerce.presentation.model.BroadleafTemplateModel;
+// import org.broadleafcommerce.presentation.model.BroadleafTemplateModelModifierDTO;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
@@ -42,7 +42,7 @@ import jakarta.annotation.Resource;
  * @see {@link CsrfFilter}
  */
 @Component("blFormProcessor")
-@ConditionalOnTemplating
+// @ConditionalOnTemplating
 public class FormProcessor extends AbstractBroadleafModelModifierProcessor {
     
     @Resource(name = "blExploitProtectionService")

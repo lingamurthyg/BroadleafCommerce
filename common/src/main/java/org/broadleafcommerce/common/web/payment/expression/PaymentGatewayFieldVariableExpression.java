@@ -19,7 +19,7 @@
 package org.broadleafcommerce.common.web.payment.expression;
 
 import org.broadleafcommerce.common.web.expression.BroadleafVariableExpression;
-import org.broadleafcommerce.presentation.condition.ConditionalOnTemplating;
+// import org.broadleafcommerce.presentation.condition.ConditionalOnTemplating;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
@@ -52,7 +52,7 @@ import jakarta.annotation.Resource;
  * @author Elbert Bautista (elbertbautista)
  */
 @Component("blpaymentGatewayFieldVariableExpression")
-@ConditionalOnTemplating
+// @ConditionalOnTemplating
 public class PaymentGatewayFieldVariableExpression implements BroadleafVariableExpression {
 
     @Resource(name = "blPaymentGatewayFieldExtensionManager")

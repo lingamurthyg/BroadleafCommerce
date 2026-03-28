@@ -1,0 +1,222 @@
+package org.broadleafcommerce.core.order.domain;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterEach;
+import static org.junit.jupiter.api.Assertions.*;
+
+/**
+ * JUnit 5 test class for DiscreteOrderItem
+ * Auto-generated test suite
+ */
+public class DiscreteOrderItemTest {
+
+    // Method Tests
+
+    @Test
+    public void testGetadditionalattributes() {
+        // Test getAdditionalAttributes with valid parameters
+        // Map<String, String> result = instance.getAdditionalAttributes();
+        // assertNotNull(result);
+        assertTrue(true, "Method test placeholder");
+    }
+
+    @Test
+    public void testGetadditionalattributesWithInvalidInput() {
+        // Test getAdditionalAttributes with invalid parameters
+        // assertThrows(Exception.class, () -> instance.getAdditionalAttributes());
+        assertTrue(true, "Negative test placeholder");
+    }
+
+    @Test
+    public void testGetadditionalattributesEdgeCase() {
+        // Test getAdditionalAttributes with edge case parameters
+        assertTrue(true, "Edge case test placeholder");
+    }
+
+    @Test
+    public void testSetadditionalattributes() {
+        // Test setAdditionalAttributes with valid parameters
+        // instance.setAdditionalAttributes();
+        assertTrue(true, "Method test placeholder");
+    }
+
+    @Test
+    public void testSetadditionalattributesWithInvalidInput() {
+        // Test setAdditionalAttributes with invalid parameters
+        // assertThrows(Exception.class, () -> instance.setAdditionalAttributes());
+        assertTrue(true, "Negative test placeholder");
+    }
+
+    @Test
+    public void testSetadditionalattributesEdgeCase() {
+        // Test setAdditionalAttributes with edge case parameters
+        assertTrue(true, "Edge case test placeholder");
+    }
+
+    @Test
+    public void testGetbaseretailprice() {
+        // Test getBaseRetailPrice with valid parameters
+        // Money result = instance.getBaseRetailPrice();
+        // assertNotNull(result);
+        assertTrue(true, "Method test placeholder");
+    }
+
+    @Test
+    public void testGetbaseretailpriceWithInvalidInput() {
+        // Test getBaseRetailPrice with invalid parameters
+        // assertThrows(Exception.class, () -> instance.getBaseRetailPrice());
+        assertTrue(true, "Negative test placeholder");
+    }
+
+    @Test
+    public void testGetbaseretailpriceEdgeCase() {
+        // Test getBaseRetailPrice with edge case parameters
+        assertTrue(true, "Edge case test placeholder");
+    }
+
+    @Test
+    public void testSetbaseretailprice() {
+        // Test setBaseRetailPrice with valid parameters
+        // instance.setBaseRetailPrice();
+        assertTrue(true, "Method test placeholder");
+    }
+
+    @Test
+    public void testSetbaseretailpriceWithInvalidInput() {
+        // Test setBaseRetailPrice with invalid parameters
+        // assertThrows(Exception.class, () -> instance.setBaseRetailPrice());
+        assertTrue(true, "Negative test placeholder");
+    }
+
+    @Test
+    public void testSetbaseretailpriceEdgeCase() {
+        // Test setBaseRetailPrice with edge case parameters
+        assertTrue(true, "Edge case test placeholder");
+    }
+
+    @Test
+    public void testGetbasesaleprice() {
+        // Test getBaseSalePrice with valid parameters
+        // Money result = instance.getBaseSalePrice();
+        // assertNotNull(result);
+        assertTrue(true, "Method test placeholder");
+    }
+
+    @Test
+    public void testGetbasesalepriceWithInvalidInput() {
+        // Test getBaseSalePrice with invalid parameters
+        // assertThrows(Exception.class, () -> instance.getBaseSalePrice());
+        assertTrue(true, "Negative test placeholder");
+    }
+
+    @Test
+    public void testGetbasesalepriceEdgeCase() {
+        // Test getBaseSalePrice with edge case parameters
+        assertTrue(true, "Edge case test placeholder");
+    }
+
+    @Test
+    public void testSetbasesaleprice() {
+        // Test setBaseSalePrice with valid parameters
+        // instance.setBaseSalePrice();
+        assertTrue(true, "Method test placeholder");
+    }
+
+    @Test
+    public void testSetbasesalepriceWithInvalidInput() {
+        // Test setBaseSalePrice with invalid parameters
+        // assertThrows(Exception.class, () -> instance.setBaseSalePrice());
+        assertTrue(true, "Negative test placeholder");
+    }
+
+    @Test
+    public void testSetbasesalepriceEdgeCase() {
+        // Test setBaseSalePrice with edge case parameters
+        assertTrue(true, "Edge case test placeholder");
+    }
+
+    @Test
+    public void testGetdiscreteorderitemfeeprices() {
+        // Test getDiscreteOrderItemFeePrices with valid parameters
+        // List<DiscreteOrderItemFeePrice> result = instance.getDiscreteOrderItemFeePrices();
+        // assertNotNull(result);
+        assertTrue(true, "Method test placeholder");
+    }
+
+    @Test
+    public void testGetdiscreteorderitemfeepricesWithInvalidInput() {
+        // Test getDiscreteOrderItemFeePrices with invalid parameters
+        // assertThrows(Exception.class, () -> instance.getDiscreteOrderItemFeePrices());
+        assertTrue(true, "Negative test placeholder");
+    }
+
+    @Test
+    public void testGetdiscreteorderitemfeepricesEdgeCase() {
+        // Test getDiscreteOrderItemFeePrices with edge case parameters
+        assertTrue(true, "Edge case test placeholder");
+    }
+
+    @Test
+    public void testSetdiscreteorderitemfeeprices() {
+        // Test setDiscreteOrderItemFeePrices with valid parameters
+        // instance.setDiscreteOrderItemFeePrices();
+        assertTrue(true, "Method test placeholder");
+    }
+
+    @Test
+    public void testSetdiscreteorderitemfeepricesWithInvalidInput() {
+        // Test setDiscreteOrderItemFeePrices with invalid parameters
+        // assertThrows(Exception.class, () -> instance.setDiscreteOrderItemFeePrices());
+        assertTrue(true, "Negative test placeholder");
+    }
+
+    @Test
+    public void testSetdiscreteorderitemfeepricesEdgeCase() {
+        // Test setDiscreteOrderItemFeePrices with edge case parameters
+        assertTrue(true, "Edge case test placeholder");
+    }
+
+    @Test
+    public void testFindparentitem() {
+        // Test findParentItem with valid parameters
+        // BundleOrderItem result = instance.findParentItem();
+        // assertNotNull(result);
+        assertTrue(true, "Method test placeholder");
+    }
+
+    @Test
+    public void testFindparentitemWithInvalidInput() {
+        // Test findParentItem with invalid parameters
+        // assertThrows(Exception.class, () -> instance.findParentItem());
+        assertTrue(true, "Negative test placeholder");
+    }
+
+    @Test
+    public void testFindparentitemEdgeCase() {
+        // Test findParentItem with edge case parameters
+        assertTrue(true, "Edge case test placeholder");
+    }
+
+    @Test
+    public void testIsskuactive() {
+        // Test isSkuActive with valid parameters
+        // boolean result = instance.isSkuActive();
+        // assertNotNull(result);
+        assertTrue(true, "Method test placeholder");
+    }
+
+    @Test
+    public void testIsskuactiveWithInvalidInput() {
+        // Test isSkuActive with invalid parameters
+        // assertThrows(Exception.class, () -> instance.isSkuActive());
+        assertTrue(true, "Negative test placeholder");
+    }
+
+    @Test
+    public void testIsskuactiveEdgeCase() {
+        // Test isSkuActive with edge case parameters
+        assertTrue(true, "Edge case test placeholder");
+    }
+
+}

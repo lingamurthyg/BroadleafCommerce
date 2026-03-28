@@ -18,7 +18,7 @@
 package org.broadleafcommerce.common.web.expression;
 
 import org.broadleafcommerce.common.module.ModulePresentUtil;
-import org.broadleafcommerce.presentation.condition.ConditionalOnTemplating;
+// import org.broadleafcommerce.presentation.condition.ConditionalOnTemplating;
 import org.springframework.stereotype.Component;
 
 /**
@@ -28,7 +28,7 @@ import org.springframework.stereotype.Component;
  * @see org.broadleafcommerce.common.module.ModulePresentUtil
  */
 @Component("blModuleVariableExpression")
-@ConditionalOnTemplating
+// @ConditionalOnTemplating
 public class ModuleVariableExpression implements BroadleafVariableExpression {
 
     @Override

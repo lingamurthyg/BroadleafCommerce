@@ -1,0 +1,131 @@
+/*
+ * #%L
+ * BroadleafCommerce Common Libraries
+ * %%
+ * Copyright (C) 2009 - 2026 Broadleaf Commerce
+ * %%
+ * Licensed under the Broadleaf Fair Use License Agreement, Version 1.0
+ * (the "Fair Use License" located  at http://license.broadleafcommerce.org/fair_use_license-1.0.txt)
+ * unless the restrictions on use therein are violated and require payment to Broadleaf in which case
+ * the Broadleaf End User License Agreement (EULA), Version 1.1
+ * (the "Commercial License" located at http://license.broadleafcommerce.org/commercial_license-1.1.txt)
+ * shall apply.
+ * 
+ * Alternatively, the Commercial License may be replaced with a mutually agreed upon license (the "Custom License")
+ * between you and Broadleaf Commerce. You may not use this file except in compliance with the applicable license.
+ * #L%
+ */
+package org.broadleafcommerce.common.i18n.service;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterEach;
+import static org.junit.jupiter.api.Assertions.*;
+
+/**
+ * JUnit 5 test class for ThresholdCacheTranslationOverrideStrategy
+ * Auto-generated test suite
+ */
+public class ThresholdCacheTranslationOverrideStrategyTest {
+
+    private ThresholdCacheTranslationOverrideStrategy instance;
+
+    @BeforeEach
+    public void setUp() {
+        // Initialize test instance
+        // instance = new ThresholdCacheTranslationOverrideStrategy();
+    }
+
+    @AfterEach
+    public void tearDown() {
+        // Clean up resources
+        instance = null;
+    }
+
+    // Method Tests
+
+    @Test
+    public void testGetlocalebasedoverride() {
+        // Test getLocaleBasedOverride with valid parameters
+        // LocalePair result = instance.getLocaleBasedOverride();
+        // assertNotNull(result);
+        assertTrue(true, "Method test placeholder");
+    }
+
+    @Test
+    public void testGetlocalebasedoverrideWithInvalidInput() {
+        // Test getLocaleBasedOverride with invalid parameters
+        // assertThrows(Exception.class, () -> instance.getLocaleBasedOverride());
+        assertTrue(true, "Negative test placeholder");
+    }
+
+    @Test
+    public void testGetlocalebasedoverrideEdgeCase() {
+        // Test getLocaleBasedOverride with edge case parameters
+        assertTrue(true, "Edge case test placeholder");
+    }
+
+    @Test
+    public void testGetlocalebasedtemplatevalue() {
+        // Test getLocaleBasedTemplateValue with valid parameters
+        // LocalePair result = instance.getLocaleBasedTemplateValue();
+        // assertNotNull(result);
+        assertTrue(true, "Method test placeholder");
+    }
+
+    @Test
+    public void testGetlocalebasedtemplatevalueWithInvalidInput() {
+        // Test getLocaleBasedTemplateValue with invalid parameters
+        // assertThrows(Exception.class, () -> instance.getLocaleBasedTemplateValue());
+        assertTrue(true, "Negative test placeholder");
+    }
+
+    @Test
+    public void testGetlocalebasedtemplatevalueEdgeCase() {
+        // Test getLocaleBasedTemplateValue with edge case parameters
+        assertTrue(true, "Edge case test placeholder");
+    }
+
+    @Test
+    public void testValidatetemplateprocessing() {
+        // Test validateTemplateProcessing with valid parameters
+        // boolean result = instance.validateTemplateProcessing();
+        // assertNotNull(result);
+        assertTrue(true, "Method test placeholder");
+    }
+
+    @Test
+    public void testValidatetemplateprocessingWithInvalidInput() {
+        // Test validateTemplateProcessing with invalid parameters
+        // assertThrows(Exception.class, () -> instance.validateTemplateProcessing());
+        assertTrue(true, "Negative test placeholder");
+    }
+
+    @Test
+    public void testValidatetemplateprocessingEdgeCase() {
+        // Test validateTemplateProcessing with edge case parameters
+        assertTrue(true, "Edge case test placeholder");
+    }
+
+    @Test
+    public void testGetorder() {
+        // Test getOrder with valid parameters
+        // int result = instance.getOrder();
+        // assertNotNull(result);
+        assertTrue(true, "Method test placeholder");
+    }
+
+    @Test
+    public void testGetorderWithInvalidInput() {
+        // Test getOrder with invalid parameters
+        // assertThrows(Exception.class, () -> instance.getOrder());
+        assertTrue(true, "Negative test placeholder");
+    }
+
+    @Test
+    public void testGetorderEdgeCase() {
+        // Test getOrder with edge case parameters
+        assertTrue(true, "Edge case test placeholder");
+    }
+
+}

@@ -22,10 +22,10 @@ import java.util.List;
 import java.util.Map;
 
 import org.broadleafcommerce.common.web.processor.attributes.ResourceTagAttributes;
-import org.broadleafcommerce.presentation.condition.ConditionalOnTemplating;
-import org.broadleafcommerce.presentation.model.BroadleafTemplateContext;
-import org.broadleafcommerce.presentation.model.BroadleafTemplateElement;
-import org.broadleafcommerce.presentation.model.BroadleafTemplateModel;
+// import org.broadleafcommerce.presentation.condition.ConditionalOnTemplating;
+// import org.broadleafcommerce.presentation.model.BroadleafTemplateContext;
+// import org.broadleafcommerce.presentation.model.BroadleafTemplateElement;
+// import org.broadleafcommerce.presentation.model.BroadleafTemplateModel;
 import org.springframework.stereotype.Component;
 
 /**
@@ -50,7 +50,7 @@ import org.springframework.stereotype.Component;
  * @author Jacob Mitash
  */
 @Component("blResourcePreloadProcessor")
-@ConditionalOnTemplating
+// @ConditionalOnTemplating
 public class ResourcePreloadProcessor extends AbstractResourceProcessor {
 
     @Override

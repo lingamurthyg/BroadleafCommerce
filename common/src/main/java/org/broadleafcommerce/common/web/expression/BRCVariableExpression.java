@@ -24,7 +24,7 @@ import org.broadleafcommerce.common.site.domain.Catalog;
 import org.broadleafcommerce.common.site.domain.Site;
 import org.broadleafcommerce.common.time.SystemTime;
 import org.broadleafcommerce.common.web.BroadleafRequestContext;
-import org.broadleafcommerce.presentation.condition.ConditionalOnTemplating;
+// import org.broadleafcommerce.presentation.condition.ConditionalOnTemplating;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -38,7 +38,7 @@ import java.util.Date;
  * @author Andre Azzolini (apazzolini)
  */
 @Component("blBRCVariableExpression")
-@ConditionalOnTemplating
+// @ConditionalOnTemplating
 public class BRCVariableExpression implements BroadleafVariableExpression {
     
     @Autowired(required = false)

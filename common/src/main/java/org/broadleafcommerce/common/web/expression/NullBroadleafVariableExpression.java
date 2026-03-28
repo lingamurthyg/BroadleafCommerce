@@ -17,7 +17,7 @@
  */
 package org.broadleafcommerce.common.web.expression;
 
-import org.broadleafcommerce.presentation.condition.ConditionalOnTemplating;
+// import org.broadleafcommerce.presentation.condition.ConditionalOnTemplating;
 import org.springframework.stereotype.Component;
 
 /**
@@ -26,7 +26,7 @@ import org.springframework.stereotype.Component;
  * @author Andre Azzolini (apazzolini)
  */
 @Component("blNullBroadleafVariableExpression")
-@ConditionalOnTemplating
+// @ConditionalOnTemplating
 public class NullBroadleafVariableExpression implements BroadleafVariableExpression {
 
     @Override

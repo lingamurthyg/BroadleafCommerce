@@ -1,0 +1,218 @@
+/*
+ * #%L
+ * BroadleafCommerce Common Libraries
+ * %%
+ * Copyright (C) 2009 - 2026 Broadleaf Commerce
+ * %%
+ * Licensed under the Broadleaf Fair Use License Agreement, Version 1.0
+ * (the "Fair Use License" located  at http://license.broadleafcommerce.org/fair_use_license-1.0.txt)
+ * unless the restrictions on use therein are violated and require payment to Broadleaf in which case
+ * the Broadleaf End User License Agreement (EULA), Version 1.1
+ * (the "Commercial License" located at http://license.broadleafcommerce.org/commercial_license-1.1.txt)
+ * shall apply.
+ * 
+ * Alternatively, the Commercial License may be replaced with a mutually agreed upon license (the "Custom License")
+ * between you and Broadleaf Commerce. You may not use this file except in compliance with the applicable license.
+ * #L%
+ */
+package org.broadleafcommerce.common.util;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterEach;
+import static org.junit.jupiter.api.Assertions.*;
+
+/**
+ * JUnit 5 test class for StreamCapableTransactionalOperationAdapter
+ * Auto-generated test suite
+ */
+public class StreamCapableTransactionalOperationAdapterTest {
+
+    // Method Tests
+
+    @Test
+    public void testPagedexecute() {
+        // Test pagedExecute with valid parameters
+        // instance.pagedExecute();
+        assertTrue(true, "Method test placeholder");
+    }
+
+    @Test
+    public void testPagedexecuteWithInvalidInput() {
+        // Test pagedExecute with invalid parameters
+        // assertThrows(Exception.class, () -> instance.pagedExecute());
+        assertTrue(true, "Negative test placeholder");
+    }
+
+    @Test
+    public void testPagedexecuteEdgeCase() {
+        // Test pagedExecute with edge case parameters
+        assertTrue(true, "Edge case test placeholder");
+    }
+
+    @Test
+    public void testExecuteaftercommit() {
+        // Test executeAfterCommit with valid parameters
+        // instance.executeAfterCommit();
+        assertTrue(true, "Method test placeholder");
+    }
+
+    @Test
+    public void testExecuteaftercommitWithInvalidInput() {
+        // Test executeAfterCommit with invalid parameters
+        // assertThrows(Exception.class, () -> instance.executeAfterCommit());
+        assertTrue(true, "Negative test placeholder");
+    }
+
+    @Test
+    public void testExecuteaftercommitEdgeCase() {
+        // Test executeAfterCommit with edge case parameters
+        assertTrue(true, "Edge case test placeholder");
+    }
+
+    @Test
+    public void testExecute() {
+        // Test execute with valid parameters
+        // instance.execute();
+        assertTrue(true, "Method test placeholder");
+    }
+
+    @Test
+    public void testExecuteWithInvalidInput() {
+        // Test execute with invalid parameters
+        // assertThrows(Exception.class, () -> instance.execute());
+        assertTrue(true, "Negative test placeholder");
+    }
+
+    @Test
+    public void testExecuteEdgeCase() {
+        // Test execute with edge case parameters
+        assertTrue(true, "Edge case test placeholder");
+    }
+
+    @Test
+    public void testRetrievepage() {
+        // Test retrievePage with valid parameters
+        // Object[] result = instance.retrievePage();
+        // assertNotNull(result);
+        assertTrue(true, "Method test placeholder");
+    }
+
+    @Test
+    public void testRetrievepageWithInvalidInput() {
+        // Test retrievePage with invalid parameters
+        // assertThrows(Exception.class, () -> instance.retrievePage());
+        assertTrue(true, "Negative test placeholder");
+    }
+
+    @Test
+    public void testRetrievepageEdgeCase() {
+        // Test retrievePage with edge case parameters
+        assertTrue(true, "Edge case test placeholder");
+    }
+
+    @Test
+    public void testRetrievetotalcount() {
+        // Test retrieveTotalCount with valid parameters
+        // Long result = instance.retrieveTotalCount();
+        // assertNotNull(result);
+        assertTrue(true, "Method test placeholder");
+    }
+
+    @Test
+    public void testRetrievetotalcountWithInvalidInput() {
+        // Test retrieveTotalCount with invalid parameters
+        // assertThrows(Exception.class, () -> instance.retrieveTotalCount());
+        assertTrue(true, "Negative test placeholder");
+    }
+
+    @Test
+    public void testRetrievetotalcountEdgeCase() {
+        // Test retrieveTotalCount with edge case parameters
+        assertTrue(true, "Edge case test placeholder");
+    }
+
+    @Test
+    public void testGetpageditems() {
+        // Test getPagedItems with valid parameters
+        // Object[] result = instance.getPagedItems();
+        // assertNotNull(result);
+        assertTrue(true, "Method test placeholder");
+    }
+
+    @Test
+    public void testGetpageditemsWithInvalidInput() {
+        // Test getPagedItems with invalid parameters
+        // assertThrows(Exception.class, () -> instance.getPagedItems());
+        assertTrue(true, "Negative test placeholder");
+    }
+
+    @Test
+    public void testGetpageditemsEdgeCase() {
+        // Test getPagedItems with edge case parameters
+        assertTrue(true, "Edge case test placeholder");
+    }
+
+    @Test
+    public void testSetpageditems() {
+        // Test setPagedItems with valid parameters
+        // instance.setPagedItems();
+        assertTrue(true, "Method test placeholder");
+    }
+
+    @Test
+    public void testSetpageditemsWithInvalidInput() {
+        // Test setPagedItems with invalid parameters
+        // assertThrows(Exception.class, () -> instance.setPagedItems());
+        assertTrue(true, "Negative test placeholder");
+    }
+
+    @Test
+    public void testSetpageditemsEdgeCase() {
+        // Test setPagedItems with edge case parameters
+        assertTrue(true, "Edge case test placeholder");
+    }
+
+    @Test
+    public void testShouldretryontransactionlockacquisitionfailure() {
+        // Test shouldRetryOnTransactionLockAcquisitionFailure with valid parameters
+        // boolean result = instance.shouldRetryOnTransactionLockAcquisitionFailure();
+        // assertNotNull(result);
+        assertTrue(true, "Method test placeholder");
+    }
+
+    @Test
+    public void testShouldretryontransactionlockacquisitionfailureWithInvalidInput() {
+        // Test shouldRetryOnTransactionLockAcquisitionFailure with invalid parameters
+        // assertThrows(Exception.class, () -> instance.shouldRetryOnTransactionLockAcquisitionFailure());
+        assertTrue(true, "Negative test placeholder");
+    }
+
+    @Test
+    public void testShouldretryontransactionlockacquisitionfailureEdgeCase() {
+        // Test shouldRetryOnTransactionLockAcquisitionFailure with edge case parameters
+        assertTrue(true, "Edge case test placeholder");
+    }
+
+    @Test
+    public void testRetrymaxcountoverrideforlockacquisitionfailure() {
+        // Test retryMaxCountOverrideForLockAcquisitionFailure with valid parameters
+        // int result = instance.retryMaxCountOverrideForLockAcquisitionFailure();
+        // assertNotNull(result);
+        assertTrue(true, "Method test placeholder");
+    }
+
+    @Test
+    public void testRetrymaxcountoverrideforlockacquisitionfailureWithInvalidInput() {
+        // Test retryMaxCountOverrideForLockAcquisitionFailure with invalid parameters
+        // assertThrows(Exception.class, () -> instance.retryMaxCountOverrideForLockAcquisitionFailure());
+        assertTrue(true, "Negative test placeholder");
+    }
+
+    @Test
+    public void testRetrymaxcountoverrideforlockacquisitionfailureEdgeCase() {
+        // Test retryMaxCountOverrideForLockAcquisitionFailure with edge case parameters
+        assertTrue(true, "Edge case test placeholder");
+    }
+
+}

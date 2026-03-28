@@ -39,7 +39,7 @@ import jakarta.annotation.Resource;
  * @author bpolster
  */
 @Component("blBreadcrumbProcessor")
-@ConditionalOnTemplating
+// @ConditionalOnTemplating
 public class BreadcrumbProcessor extends AbstractBroadleafVariableModifierProcessor {
 
     @Resource

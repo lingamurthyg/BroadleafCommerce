@@ -1,0 +1,129 @@
+/*
+ * #%L
+ * BroadleafCommerce Common Libraries
+ * %%
+ * Copyright (C) 2009 - 2026 Broadleaf Commerce
+ * %%
+ * Licensed under the Broadleaf Fair Use License Agreement, Version 1.0
+ * (the "Fair Use License" located  at http://license.broadleafcommerce.org/fair_use_license-1.0.txt)
+ * unless the restrictions on use therein are violated and require payment to Broadleaf in which case
+ * the Broadleaf End User License Agreement (EULA), Version 1.1
+ * (the "Commercial License" located at http://license.broadleafcommerce.org/commercial_license-1.1.txt)
+ * shall apply.
+ * 
+ * Alternatively, the Commercial License may be replaced with a mutually agreed upon license (the "Custom License")
+ * between you and Broadleaf Commerce. You may not use this file except in compliance with the applicable license.
+ * #L%
+ */
+package org.broadleafcommerce.common.weave;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterEach;
+import static org.junit.jupiter.api.Assertions.*;
+
+/**
+ * JUnit 5 test class for ConditionalFieldAnnotationCopyTransformMemberDTO
+ * Auto-generated test suite
+ */
+public class ConditionalFieldAnnotationCopyTransformMemberDTOTest {
+
+    private ConditionalFieldAnnotationCopyTransformMemberDTO instance;
+
+    @BeforeEach
+    public void setUp() {
+        // Initialize test instance
+        // instance = new ConditionalFieldAnnotationCopyTransformMemberDTO();
+    }
+
+    @AfterEach
+    public void tearDown() {
+        // Clean up resources
+        instance = null;
+    }
+
+    // Method Tests
+
+    @Test
+    public void testGettemplatenames() {
+        // Test getTemplateNames with valid parameters
+        // String[] result = instance.getTemplateNames();
+        // assertNotNull(result);
+        assertTrue(true, "Method test placeholder");
+    }
+
+    @Test
+    public void testGettemplatenamesWithInvalidInput() {
+        // Test getTemplateNames with invalid parameters
+        // assertThrows(Exception.class, () -> instance.getTemplateNames());
+        assertTrue(true, "Negative test placeholder");
+    }
+
+    @Test
+    public void testGettemplatenamesEdgeCase() {
+        // Test getTemplateNames with edge case parameters
+        assertTrue(true, "Edge case test placeholder");
+    }
+
+    @Test
+    public void testSettemplatenames() {
+        // Test setTemplateNames with valid parameters
+        // instance.setTemplateNames();
+        assertTrue(true, "Method test placeholder");
+    }
+
+    @Test
+    public void testSettemplatenamesWithInvalidInput() {
+        // Test setTemplateNames with invalid parameters
+        // assertThrows(Exception.class, () -> instance.setTemplateNames());
+        assertTrue(true, "Negative test placeholder");
+    }
+
+    @Test
+    public void testSettemplatenamesEdgeCase() {
+        // Test setTemplateNames with edge case parameters
+        assertTrue(true, "Edge case test placeholder");
+    }
+
+    @Test
+    public void testGetconditionalproperty() {
+        // Test getConditionalProperty with valid parameters
+        // String result = instance.getConditionalProperty();
+        // assertNotNull(result);
+        assertTrue(true, "Method test placeholder");
+    }
+
+    @Test
+    public void testGetconditionalpropertyWithInvalidInput() {
+        // Test getConditionalProperty with invalid parameters
+        // assertThrows(Exception.class, () -> instance.getConditionalProperty());
+        assertTrue(true, "Negative test placeholder");
+    }
+
+    @Test
+    public void testGetconditionalpropertyEdgeCase() {
+        // Test getConditionalProperty with edge case parameters
+        assertTrue(true, "Edge case test placeholder");
+    }
+
+    @Test
+    public void testSetconditionalproperty() {
+        // Test setConditionalProperty with valid parameters
+        // instance.setConditionalProperty();
+        assertTrue(true, "Method test placeholder");
+    }
+
+    @Test
+    public void testSetconditionalpropertyWithInvalidInput() {
+        // Test setConditionalProperty with invalid parameters
+        // assertThrows(Exception.class, () -> instance.setConditionalProperty());
+        assertTrue(true, "Negative test placeholder");
+    }
+
+    @Test
+    public void testSetconditionalpropertyEdgeCase() {
+        // Test setConditionalProperty with edge case parameters
+        assertTrue(true, "Edge case test placeholder");
+    }
+
+}

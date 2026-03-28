@@ -23,7 +23,7 @@ package org.broadleafcommerce.common.web.expression;
 import org.broadleafcommerce.common.breadcrumbs.dto.BreadcrumbDTO;
 import org.broadleafcommerce.common.breadcrumbs.service.BreadcrumbService;
 import org.broadleafcommerce.common.web.BroadleafRequestContext;
-import org.broadleafcommerce.presentation.condition.ConditionalOnTemplating;
+// import org.broadleafcommerce.presentation.condition.ConditionalOnTemplating;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
@@ -38,7 +38,7 @@ import jakarta.annotation.Resource;
  * @author Phillip Verheyden (phillipuniverse)
  */
 @Component("blBreadcrumbVariableExpression")
-@ConditionalOnTemplating
+// @ConditionalOnTemplating
 public class BreadcrumbVariableExpression implements BroadleafVariableExpression {
 
     @Resource(name = "blBreadcrumbService")
